@@ -28,7 +28,8 @@ DJANGO_APPS = [
 ]
 
 PROJECT_APPS = [
-    # Agrega aquí tus aplicaciones personalizadas
+   'apps.blog',
+   'apps.category'
 ]
 
 THIRD_PARTY_APPS = [
@@ -106,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Configuración internacionalización
 LANGUAGE_CODE = 'es'
-TIME_ZONE = 'UTC-5'
+TIME_ZONE = 'America/Argentina/Buenos_Aires'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
