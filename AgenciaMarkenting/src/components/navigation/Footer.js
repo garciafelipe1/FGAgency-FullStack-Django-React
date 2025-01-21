@@ -97,7 +97,7 @@ function Footer(){
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <div className="space-y-8 xl:col-span-1">
             <img
-                src={'https://bafybeie3dkjdydulam4igwx2hwaepkkyugze2z7bpohekdi2maqrgaaegq.ipfs.w3s.link/idealogo.png'}
+                src={'https://cdn-icons-png.flaticon.com/256/9169/9169912.png'}
                 width={60}
                 height={60}
                 className=""/>
@@ -166,7 +166,7 @@ function Footer(){
             </div>
           </div>
           <div className="mt-12 border-t border-gray-200 pt-8">
-            <p className="text-base text-gray-400 xl:text-center">&copy; 2020 Murkiva by Boomslag, Inc. All rights reserved.</p>
+            <p className="text-base text-gray-400 xl:text-center">&copy; 2024 Felipe by Garcia, Inc. All rights reserved.</p>
           </div>
         </div>
       </footer>
