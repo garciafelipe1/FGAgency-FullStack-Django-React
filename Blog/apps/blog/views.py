@@ -2,7 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import permissions
-
+from django.db.models import Q
 
 from .models import Post, ViewCount
 from apps.category.models import Category
@@ -95,6 +95,14 @@ class PostDetailView(APIView):
             return Response({'error': 'El post no existe'}, status=status.HTTP_404_NOT_FOUND)
                
                
-# class SearchBlogView(APIView):               
-                        
-          
+class SearchBlogView(APIView):
+     def get(self,request,format=None):
+          s= request.query_params.get('s')
+          matches=Post.objects.filter(
+               Q(title__icontains=s) |
+               Q(description__icontains=s) | 
+               Q(category__name__icontains=s)
+               )            
+          serializer=PostListSerializer(matches,many=True)
+          return Response ({'filtered_post':serializer.data}, status=status.HTTP_200_OK)             
+     
