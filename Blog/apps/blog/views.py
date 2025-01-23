@@ -68,3 +68,33 @@ class ListPostByCategoryView(APIView):
                return paginator.get_paginated_response({'post':serializers.data})
           else:
                return Response({'post':'no post found'},status=status.HTTP_404_NOT_FOUND)
+          
+          
+class PostDetailView(APIView):
+    def get(self, request, slug, format=None):
+        if Post.objects.filter(slug=slug).exists():
+            # Obtener el post y serializarlo
+            post = Post.objects.get(slug=slug)
+            serializer = PostSerializer(post)
+            
+            # Obtener la dirección IP del usuario
+            address = request.META.get('HTTP_X_FORWARDED_FOR')
+            if address:
+                ip = address.split(',')[-1].strip()
+            else:
+                ip = request.META.get('REMOTE_ADDR')
+            
+            # Verificar si la IP ya ha contado una vista para este post
+            if not ViewCount.objects.filter(post=post, ip_address=ip).exists():  # Cambiado ip_adress a ip_address
+                ViewCount.objects.create(post=post, ip_address=ip)  # Cambiado ip_adress a ip_address
+                post.views += 1
+                post.save()  # Guardar el incremento de vistas
+            
+            return Response({'post': serializer.data}, status=status.HTTP_200_OK)
+        else:
+            return Response({'error': 'El post no existe'}, status=status.HTTP_404_NOT_FOUND)
+               
+               
+# class SearchBlogView(APIView):               
+                        
+          
