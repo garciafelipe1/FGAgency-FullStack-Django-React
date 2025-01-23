@@ -14,10 +14,10 @@ from .pagination import smallSetPagination,MediumSetPagination,LargeSetPaginatio
 class BlogListView(APIView):
         permission_classes = (permissions.AllowAny,)
         def get(self, request,format=None):
-          if Post.objects.all().exists():
+          if Post.postobjects.all().exists():
                
                
-               posts=Post.objects.all()
+               posts=Post.postobjects.all()
                
                paginator=smallSetPagination()
                result=paginator.paginate_queryset(posts,request)
@@ -34,12 +34,12 @@ class BlogListView(APIView):
 class ListPostByCategoryView(APIView):
      permission_classes = (permissions.AllowAny,)
      def get(self, request,format=None):
-          if Post.objects.all().exists():
+          if Post.postobjects.all().exists():
                 
                slug=request.query_params.get('slug')
                category= Category.objects.get(slug=slug)  
                            
-               posts=Post.objects.order_by('-published').all()
+               posts=Post.postobjects.order_by('-published').all()
                
                if category.parent:
                     post=post.filter(category=category)
@@ -71,10 +71,11 @@ class ListPostByCategoryView(APIView):
           
           
 class PostDetailView(APIView):
+    permission_classes = (permissions.AllowAny,)
     def get(self, request, slug, format=None):
-        if Post.objects.filter(slug=slug).exists():
+        if Post.postobjects.filter(slug=slug).exists():
             # Obtener el post y serializarlo
-            post = Post.objects.get(slug=slug)
+            post = Post.postobjects.get(slug=slug)
             serializer = PostSerializer(post)
             
             # Obtener la dirección IP del usuario
@@ -96,9 +97,10 @@ class PostDetailView(APIView):
                
                
 class SearchBlogView(APIView):
+     permission_classes = (permissions.AllowAny,)
      def get(self,request,format=None):
           s= request.query_params.get('s')
-          matches=Post.objects.filter(
+          matches=Post.postobjects.filter(
                Q(title__icontains=s) |
                Q(description__icontains=s) | 
                Q(category__name__icontains=s)

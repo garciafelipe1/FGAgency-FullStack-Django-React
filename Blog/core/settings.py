@@ -9,7 +9,7 @@ env = environ.Env()
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Cargar archivo .env
-environ.Env.read_env(env_file=os.path.join(BASE_DIR, '.env'))
+environ.Env.read_env(env_file=os.path.join(BASE_DIR, 'core', '.env'))
 
 # Configuración básica
 SECRET_KEY = env('SECRET_KEY')
