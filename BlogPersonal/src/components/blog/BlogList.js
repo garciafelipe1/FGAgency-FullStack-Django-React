@@ -1,4 +1,4 @@
-import { CheckCircleIcon, ChevronDoubleRightIcon, EnvelopeIcon } from "@heroicons/react/20/solid"
+import { CheckCircleIcon, ChevronRightIcon, EnvelopeIcon } from "@heroicons/react/20/solid"
 import SmallSetPagination from "components/pagination/SmallSetPagination"
 import BlogCardHorizontal from "./BlogCardHorizontal"
 

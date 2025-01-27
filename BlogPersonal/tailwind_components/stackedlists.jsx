@@ -6,7 +6,7 @@ const applications = [
       name: 'Ricardo Cooper',
       email: 'ricardo.cooper@example.com',
       imageUrl:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        'https://i.pinimg.com/736x/93/55/d1/9355d192a7b1d1bca7e229449689e0ce.jpg',
     },
     date: '2020-01-07',
     dateFull: 'January 7, 2020',

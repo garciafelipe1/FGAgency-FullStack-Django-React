@@ -23,7 +23,7 @@ const posts_software = [
         name: 'Roel Aufderehar',
         href: '#',
         imageUrl:
-          'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2850&q=80',
+          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
       },
     },
     {
@@ -42,7 +42,7 @@ const posts_software = [
         name: 'Brenna Goyette',
         href: '#',
         imageUrl:
-          'https://i.pinimg.com/736x/ce/3c/e2/ce3ce2168de561a65ebf031327b44315.jpg',
+          'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
       },
     },
     {
@@ -77,7 +77,7 @@ const posts_design = [
       date: 'Mar 16, 2020',
       datetime: '2020-03-16',
       imageUrl:
-        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+        'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
       readingTime: '6 min',
       author: {
         name: 'Roel Aufderehar',
