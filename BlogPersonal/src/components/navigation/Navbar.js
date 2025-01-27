@@ -72,9 +72,9 @@ function Navbar(){
                 <div className="-ml-4 -mt-2 hidden lg:flex flex-wrap items-center justify-between sm:flex-nowrap md:px-4 px-2">
                     <Link to='/' className="ml-4 mt-2">
                     <img
-                        src={'https://bafybeiczl4dcxupma2zeyilkukfl4yge64axnhajd722wxgin62mtts6uy.ipfs.w3s.link/murkivamarketing.png'}
-                        width={160}
-                        height={160}
+                        src={'https://cdn-icons-png.flaticon.com/256/9169/9169912.png'}
+                        width={60}
+                        height={60}
                         className=""
                     />
                     </Link>
@@ -98,7 +98,7 @@ function Navbar(){
                 <div className="-ml-4 -mt-2 lg:hidden flex flex-wrap items-center justify-between sm:flex-nowrap md:px-4 px-2">
                     <Link to='/' className="ml-4 mt-3">
                     <img
-                        src={'https://bafybeiczl4dcxupma2zeyilkukfl4yge64axnhajd722wxgin62mtts6uy.ipfs.w3s.link/murkivamarketing.png'}
+                        src={'https://cdn-icons-png.flaticon.com/256/9169/9169912.png'}
                         width={160}
                         height={160}
                         className=""
