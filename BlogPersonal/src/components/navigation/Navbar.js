@@ -99,8 +99,8 @@ function Navbar(){
                     <Link to='/' className="ml-4 mt-3">
                     <img
                         src={'https://cdn-icons-png.flaticon.com/256/9169/9169912.png'}
-                        width={160}
-                        height={160}
+                        width={60}
+                        height={60}
                         className=""
                     />
                     </Link>
