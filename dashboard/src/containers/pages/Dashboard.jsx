@@ -1,10 +1,10 @@
 import Layout from "hocs/layout/Layout"
 import { connect } from "react-redux"
 
-function Home() {
+function Dashboard() {
     return (
         <Layout>
-            <h1>Homeee</h1>
+            <h1>Dashboard</h1>
         </Layout>
     )
 }
@@ -12,4 +12,4 @@ function Home() {
 const mapStateToProps = state => ({
     
 })
-export default connect  (mapStateToProps,{})(Home)
+export default connect  (mapStateToProps,{})(Dashboard)
