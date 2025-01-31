@@ -128,19 +128,22 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # Configuración de rest_framework
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+        'rest_framework.permissions.AllowAny',
     ],
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
 }
 
 SIMPLE_JWT = {
-    'AUTH_HEADER_TYPES': ('JTW',),
+    'AUTH_HEADER_TYPES': ('JWT',),
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
     'ROTATE_REFRESH_TOKENS': False,
     'BLACKLIST_AFTER_ROTATION': True,
     'AUTH_TOKEN_CLASSES': ('rest_framework_simplejwt.tokens.AccessToken',)
 }
-DJOSER ={
+DJOSER = {
     'LOGIN_FIELD': 'email',
     'USER_CREATE_PASSWORD_RETYPE':True,
     'USER_NAME_CHANGED_EMAIL_CONFIRMATION':True,
@@ -175,8 +178,15 @@ PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
 ]
 # Configuración de CORS y CSRF
-CORS_ORIGIN_WHITELIST = env.list('CORS_ORIGIN_WHITELIST_DEV')
-CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS_DEV')
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3001',
+    'http://localhost:3000'
+    
+]
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3001',
+    'http://localhost:3000',
+]
 
 # Configuración de correo
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -187,7 +197,7 @@ DJOSER = {
     'USER_CHANGED_EMAIL_CONFIRMATION': True,
     'PASSWORD_CHANGED_EMAIL_CONFIRMATION': True,
     'SEND_CONFIRMATION_EMAIL': True,
-    'PASSWORD_ACTIVATION_EMAIL': True,\
+    'PASSWORD_ACTIVATION_EMAIL': True,
     'SET_USERNAME_RETYPE': True,
     'SET_PASSWORD_RETYPE': True,
     'PASSWORD_RESET_CONFIRM_RETYPE':True,
@@ -195,7 +205,8 @@ DJOSER = {
     'USERNAME_RESET_CONFIRM_URL': 'username/reset/confirm/{uid}/{token}',
     'ACTIVATION_URL': 'activate/{uid}/{token}',
     'SEND_ACTIVATION_EMAIL': True,
-    'SERIALIZERS': {},
+    'SERIALIZERS': {
+        },
 }
 
 # Configuraciones para producción
@@ -203,6 +214,7 @@ if not DEBUG:
     ALLOWED_HOSTS = env.list('ALLOWED_HOSTS_DEPLOY')
     CORS_ORIGIN_WHITELIST = env.list('CORS_ORIGIN_WHITELIST_DEPLOY')
     CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS_DEPLOY')
+
 
     DATABASES = {
         "default": env.db("DATABASE_URL"),
