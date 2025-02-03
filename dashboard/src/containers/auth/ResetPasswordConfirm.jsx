@@ -2,22 +2,31 @@ import Layout from "hocs/layout/Layout"
 import { connect } from "react-redux"
 import { LockClosedIcon } from '@heroicons/react/20/solid'
 import React, { useState } from 'react';
-import { login } from "redux/actions/auth/auth";
+import { login, reset_password_confirm } from "redux/actions/auth/auth";
 import { useEffect } from "react";
 import { refresh } from "redux/actions/auth/auth";
 import { check_authenticated } from "redux/actions/auth/auth";
 import { load_user } from "redux/actions/auth/auth";
 import { Navigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import ResetPassword from "./ResetPassword";
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-function Home({
-  login,
+function ResetPasswordConfirm({
+  reset_password_confirm,
   isAuthenticated,
   loading,
   refresh,
   check_authenticated,
   load_user,
 }){
+
+    const params = useParams()
+    const uid = params.uid
+    const token = params.token
+
+
 
   useEffect(()=>{
       isAuthenticated ? <></>:
@@ -29,19 +38,25 @@ function Home({
   },[])
 
   const [formdata, setFormData] = useState({
-    email: "",
-    password: ""
+    new_password: '',
+    repeat_password: ''
   })
 
-  const { email, password } = formdata
+  const {  new_password, repeat_password} = formdata
 
   const onchange = e => {
     setFormData({ ...formdata, [e.target.name]: e.target.value })
   }
 
+
+  const navigate = useNavigate()
+
+
+
   const onsubmit = e => {
     e.preventDefault()
-    login(email, password)
+    reset_password_confirm(uid, token, new_password,repeat_password)
+    Navigate('/')
   }
 
 
@@ -64,17 +79,17 @@ function Home({
             <div className="-space-y-px rounded-md shadow-sm">
               <div>
                 <label htmlFor="email-address" className="sr-only">
-                  Email address
+                  Password
                 </label>
                 <input
-                  id="email-address"
-                  name="email"
-                  value={email}
+                  
+                  name="new_password"
+                  value={new_password}
                   onChange={e => onchange(e)}
-                  type="email"
+                  type="password"
                   required
                   className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                  placeholder="Email address"
+                  placeholder="new Password"
                 />
               </div>
               <div>
@@ -82,14 +97,14 @@ function Home({
                   Password
                 </label>
                 <input
-                  id="password"
-                  name="password"
-                  value={password}
+                  
+                  name="repeat_password"
+                  value={repeat_password}
                   onChange={e => onchange(e)}
                   type="password"
                   required
                   className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                  placeholder="Password"
+                  placeholder="repeat new password"
                 />
               </div>
             </div>
@@ -138,7 +153,8 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps, { 
+  reset_password_confirm,  
   refresh,
   check_authenticated,
   load_user,
-  login })(Home)
+  login })(ResetPasswordConfirm)

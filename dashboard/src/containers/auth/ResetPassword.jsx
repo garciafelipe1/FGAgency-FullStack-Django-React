@@ -1,17 +1,19 @@
-import Layout from "hocs/layout/Layout"
+
 import { connect } from "react-redux"
-import { LockClosedIcon } from '@heroicons/react/20/solid'
+
 import React, { useState } from 'react';
-import { login } from "redux/actions/auth/auth";
+import { reset_password } from "redux/actions/auth/auth";
 import { useEffect } from "react";
 import { refresh } from "redux/actions/auth/auth";
 import { check_authenticated } from "redux/actions/auth/auth";
 import { load_user } from "redux/actions/auth/auth";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { EnvelopeIcon } from "@heroicons/react/24/outline";
 
-function Home({
-  login,
+
+function ResetPassword({
+  reset_password,
   isAuthenticated,
   loading,
   refresh,
@@ -30,19 +32,24 @@ function Home({
 
   const [formdata, setFormData] = useState({
     email: "",
-    password: ""
+    
   })
 
-  const { email, password } = formdata
+  const { email } = formdata
 
   const onchange = e => {
     setFormData({ ...formdata, [e.target.name]: e.target.value })
   }
 
-  const onsubmit = e => {
-    e.preventDefault()
-    login(email, password)
-  }
+
+  const navigate=useNavigate()
+
+  const onsubmit = async (e) => {
+    e.preventDefault();
+    await reset_password(email);
+    navigate('/');
+  };
+
 
 
   if(isAuthenticated){
@@ -77,21 +84,7 @@ function Home({
                   placeholder="Email address"
                 />
               </div>
-              <div>
-                <label htmlFor="password" className="sr-only">
-                  Password
-                </label>
-                <input
-                  id="password"
-                  name="password"
-                  value={password}
-                  onChange={e => onchange(e)}
-                  type="password"
-                  required
-                  className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                  placeholder="Password"
-                />
-              </div>
+              
             </div>
 
             <div className="flex items-center justify-between">
@@ -102,14 +95,13 @@ function Home({
                   type="checkbox"
                   className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                 />
-                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
-                  Remember me
-                </label>
+                
               </div>
 
               <div className="text-sm">
-                <Link to="/forgot_password" href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
-                  Forgot your password?
+                Alredy have an account?
+                <Link to="/" className="font-medium text-indigo-600 hover:text-indigo-500">
+                  Login
                 </Link>
               </div>
             </div>
@@ -120,9 +112,9 @@ function Home({
                 className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
                 <span className="absolute inset-y-0 left-0 flex items-center pl-3">
-                  <LockClosedIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
+                  <EnvelopeIcon className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" aria-hidden="true" />
                 </span>
-                Sign in
+                Send Email
               </button>
             </div>
           </form>
@@ -141,4 +133,5 @@ export default connect(mapStateToProps, {
   refresh,
   check_authenticated,
   load_user,
-  login })(Home)
+  
+  reset_password })(ResetPassword)

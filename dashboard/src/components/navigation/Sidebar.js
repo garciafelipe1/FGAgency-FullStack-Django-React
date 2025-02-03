@@ -25,7 +25,7 @@ function SideBar() {
     const navigation = [
         { name: 'Dashboard', href: '/dashboard', icon: HomeIcon, current: location.pathname === '/dashboard'? true : false },
         { name: 'Blog', href: '/blog', icon: RssIcon, current: location.pathname === '/blog'? true : false },
-        { name: 'home', href: '/', icon: RssIcon, current: location.pathname === '/home'? true : false },
+        
         
         
     ]

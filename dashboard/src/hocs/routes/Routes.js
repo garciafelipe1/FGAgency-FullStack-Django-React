@@ -1,3 +1,6 @@
+
+import ResetPassword from 'containers/auth/ResetPassword'
+import ResetPasswordConfirm from 'containers/auth/ResetPasswordConfirm'
 import Error404 from 'containers/errors/Error404'
 import Blog from 'containers/pages/blog/Blog'
 import Dashboard from 'containers/pages/Dashboard'
@@ -16,7 +19,11 @@ function AnimatedRoutes(){
         <Routes location={location} key={location.pathname}>
                     
                     <Route path="*" element={<Error404 />} />
+                    <Route path="/forgot_password" element={<ResetPassword/>} />
+                    <Route path="/password/reset/confirm/:uid/:token" element={<ResetPasswordConfirm/>} />
+
                     
+
                     <Route path="/" element={<Home/>} />
                     <Route path="/blog" element={<Blog/>} />
                     <Route path="/dashboard" element={<Dashboard/>} />

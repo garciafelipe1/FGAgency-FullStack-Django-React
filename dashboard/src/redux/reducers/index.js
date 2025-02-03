@@ -6,5 +6,5 @@ import auth from './auth';
 export default combineReducers({
     categories,
     blog,
-    auth
+    auth,
 })
