@@ -3,6 +3,7 @@ import ResetPassword from 'containers/auth/ResetPassword'
 import ResetPasswordConfirm from 'containers/auth/ResetPasswordConfirm'
 import Error404 from 'containers/errors/Error404'
 import Blog from 'containers/pages/blog/Blog'
+import EditPost from 'containers/pages/blog/EditPost'
 import Dashboard from 'containers/pages/Dashboard'
 import Home from 'containers/pages/Home'
 
@@ -26,6 +27,7 @@ function AnimatedRoutes(){
 
                     <Route path="/" element={<Home/>} />
                     <Route path="/blog" element={<Blog/>} />
+                    <Route path="/blog/:slug" element={<EditPost/>} />
                     <Route path="/dashboard" element={<Dashboard/>} />
                    
 
