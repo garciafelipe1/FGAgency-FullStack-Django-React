@@ -10,7 +10,7 @@ urlpatterns = [
     path('auth/', include('djoser.social.urls')),
     
 
-
+    
     path('api/blog/', include('apps.blog.urls')),
     path('api/category/', include('apps.category.urls')),
 

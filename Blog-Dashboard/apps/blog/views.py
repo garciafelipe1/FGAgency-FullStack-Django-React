@@ -8,8 +8,9 @@ from apps.category.models import Category
 
 from .serializers import PostSerializer, PostListSerializer
 from .pagination import SmallSetPagination, MediumSetPagination, LargeSetPagination
-
+from .permissions import isPostAuthorOrReadOnly
 from django.db.models.query_utils import Q
+from rest_framework.parsers import MultiPartParser, FormParser
 
 
 class BlogListView(APIView):
@@ -119,7 +120,7 @@ class SearchBlogView(APIView):
         serializer = PostListSerializer(results, many=True)
         return paginator.get_paginated_response({'filtered_posts': serializer.data})
     
-    
+
     
     
 class AuthorBlogListView(APIView):
@@ -139,3 +140,21 @@ class AuthorBlogListView(APIView):
             return paginator.get_paginated_response({'posts': serializer.data})
         else:
             return Response({'error':'No posts found'}, status=status.HTTP_404_NOT_FOUND)
+        
+        
+class EditBlogPostView(APIView):
+    permission_classes = (isPostAuthorOrReadOnly,)
+    parser_classes=[MultiPartParser, FormParser]
+    def put(self, request, format=None):
+
+        user = self.request.user
+        data=self.request.data
+        slug=data['slug']
+
+        post=Post.objects.get(slug=slug)
+        
+        
+        if(data['title']):
+            post.title=data['title']
+            post.save()
+        return Response({'success':'Post edit'})        
