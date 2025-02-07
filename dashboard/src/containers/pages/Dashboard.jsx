@@ -1,15 +1,18 @@
 import Layout from "hocs/layout/Layout"
 import { connect } from "react-redux"
 
-function Dashboard() {
-    return (
+function Dashboard(){
+    return(
         <Layout>
-            <h1>Dashboard</h1>
+            Dashboard
         </Layout>
     )
 }
 
-const mapStateToProps = state => ({
-    
+const mapStateToProps=state=>({
+
 })
-export default connect  (mapStateToProps,{})(Dashboard)
+
+export default connect(mapStateToProps,{
+
+}) (Dashboard)

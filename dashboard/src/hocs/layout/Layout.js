@@ -100,9 +100,9 @@ function Layout({
                         <div className="flex flex-shrink-0 items-center px-4">
                         <Link to='/' className="ml-4 mt-2">
                         <img
-                            src={'https://cdn-icons-png.flaticon.com/256/9169/9169912.png'}
-                            width={60}
-                            height={60}
+                            src={'https://bafybeiczl4dcxupma2zeyilkukfl4yge64axnhajd722wxgin62mtts6uy.ipfs.w3s.link/murkivamarketing.png'}
+                            width={160}
+                            height={160}
                             className=""
                         />
                         </Link>
@@ -143,11 +143,11 @@ function Layout({
                 <div className="flex flex-shrink-0 items-center px-4">
                 <Link to='/' className="ml-4 mt-2">
                         <img
-                        src={'https://cdn-icons-png.flaticon.com/256/9169/9169912.png'}
-                        width={60}
-                        height={60}
-                        className=""
-                    />
+                            src={'https://bafybeiczl4dcxupma2zeyilkukfl4yge64axnhajd722wxgin62mtts6uy.ipfs.w3s.link/murkivamarketing.png'}
+                            width={160}
+                            height={160}
+                            className=""
+                        />
                         </Link>
                 </div>
                 <nav className="mt-5 flex-1 space-y-1 bg-white px-2">
