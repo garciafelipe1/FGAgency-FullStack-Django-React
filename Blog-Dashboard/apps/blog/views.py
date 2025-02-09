@@ -11,7 +11,7 @@ from .pagination import SmallSetPagination, MediumSetPagination, LargeSetPaginat
 from .permissions import isPostAuthorOrReadOnly
 from django.db.models.query_utils import Q
 from rest_framework.parsers import MultiPartParser, FormParser
-
+from slugify import slugify
 
 class BlogListView(APIView):
     permission_classes = (permissions.AllowAny,)
@@ -148,13 +148,26 @@ class EditBlogPostView(APIView):
     def put(self, request, format=None):
 
         user = self.request.user
-        data=self.request.data
-        slug=data['slug']
-
+        data= self.request.data
+        slug= data['slug']
         post=Post.objects.get(slug=slug)
         
-        
         if(data['title']):
-            post.title=data['title']
+            post.title = data['title']
             post.save()
-        return Response({'success':'Post edit'})        
+        if (data['new_slug']):
+            post.slug = slugify(data['new_slug'])
+            post.save()
+        if(data['description']):
+            post.description = data['description']
+            post.save()
+        if(data['content']):
+            post.content = data['content']
+            post.save()
+        
+        
+        
+            
+        return Response({'success':'Post edit'})
+    
+         
