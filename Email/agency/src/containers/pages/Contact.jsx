@@ -7,6 +7,8 @@ import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/outline'
 import { Switch } from '@headlessui/react'
 import { useState } from 'react'
 import { Link } from "react-router-dom";
+import axios from "axios";
+import CircleLoader from "react-spinners/CircleLoader";
 function Contact(){
   
     useEffect(()=>{
@@ -15,6 +17,74 @@ function Contact(){
     const [enabled, setEnabled] = useState(false)
     
     const[loading,setLoading]=useState(false)
+
+    const[formdata,setformdata]=useState({
+      name:"",
+      email:"",
+      message:"",
+      subject:"",
+      phone:"",
+      budget:""
+    });
+    const { name,
+    email,
+    subject,
+    message,
+    phone,
+    budget,
+    }=formdata
+
+    const onChange=(e)=>{
+      setformdata({...formdata,[e.target.name]:e.target.value})
+    }
+    const onSubmit=(e)=>{
+      e.preventDefault()
+
+      if(enabled){
+        setLoading(true)
+
+        const config={
+          headers: {
+            'Content-Type': 'application/json'
+          }
+          
+        }
+
+        const formdata=new FormData()
+        formdata.append("name",name)
+        formdata.append("email",email)
+        formdata.append("subject",subject)
+        formdata.append("message",message)
+        formdata.append("phone",phone)
+        formdata.append("budget",budget)
+
+        const fetchData=async()=>{
+          const res= await axios.post(`${process.env.REACT_APP_API_URL}/api/contacts/`,formdata,config)
+
+          if(res.status===200){
+            setLoading(false)
+            setformdata({
+              name:"",
+              email:"",
+              message:"",
+              subject:"",
+              phone:"",
+              budget:""
+            })
+            alert("Message sent successfully")
+          }
+          else{
+            setLoading(false)
+            alert("Something went wrong")
+          }
+
+
+        }
+        fetchData()
+      }else{
+        alert("you must accept terms and conditions")
+      }
+    }
 
 
 
@@ -91,14 +161,17 @@ function Contact(){
         </div>
         <div className="bg-white py-16 px-4 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
           <div className="mx-auto max-w-lg lg:max-w-none">
-            <form action="#" method="POST" className="grid grid-cols-1 gap-y-6">
+            <form onSubmit={e=>onSubmit(e)} action="#" method="POST" className="grid grid-cols-1 gap-y-6">
               <div>
                 <label htmlFor="full-name" className="sr-only">
                   Full name
                 </label>
                 <input
                   type="text"
-                  name="full-name"
+                  name="name"
+                  value={name}
+                  required
+                  onChange={e=>onChange(e)}
                   id="full-name"
                   autoComplete="name"
                   className="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
@@ -111,7 +184,9 @@ function Contact(){
                   Email
                 </label>
                 <input
-                  id="email"
+                  value={email}
+                  required
+                  onChange={e=>onChange(e)}
                   name="email"
                   type="email"
                   autoComplete="email"
@@ -121,27 +196,39 @@ function Contact(){
               </div>
 
               <div>
-                <label htmlFor="phone" className="sr-only">
+                <label htmlFor="price" className="sr-only">
                   Phone
                 </label>
-                <input
-                  type="text"
-                  name="phone"
-                  id="phone"
-                  autoComplete="tel"
-                  className="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
-                  placeholder="Phone"
-                />
+                <div className="relative mt-1 rounded-md shadow-sm">
+                  <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                    <span className="text-gray-500 sm:text-sm">+</span>
+                  </div>
+                  <input
+                    type="number"
+                    name="phone"
+                    value={phone}
+                    required
+                    onChange={e=>onChange(e)}
+                    className="block w-full rounded-md border-gray-300 pl-7 pr-12 focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+                    placeholder="54 291 342 6732"
+                    aria-describedby="price-currency"
+                  />
+                
+                </div>
+              
               </div>
 
               <div>
-                <label  className="sr-only">
-                  Full name
+                <label className="sr-only">
+                  Subject
                 </label>
                 <input
                   type="text"
-                  name="Subject"
-                  className="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
+                  name="subject"
+                  value={subject}
+                  required
+                  onChange={e=>onChange(e)}
+                  className="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-orange-500 focus:ring-orange-500"
                   placeholder="Subject"
                 />
               </div>
@@ -153,6 +240,9 @@ function Contact(){
                 <textarea
                   id="message"
                   name="message"
+                  value={message}
+                  required
+                  onChange={e=>onChange(e)}
                   rows={4}
                   className="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                   placeholder="Message"
@@ -163,8 +253,12 @@ function Contact(){
                 <label htmlFor="message" className="sr-only">
                   Budget
                 </label>
-                <select name="budget"
-                        className="mt-1 block w-full pl-3 pr-3 py-1 text-base border-gray-300 text-gray-500">
+                <select
+                      name="budget"
+                      value={budget}
+                      required
+                      onChange={e=>onChange(e)}
+                      className="mt-1 block w-full pl-3 pr-3 py-1 text-base border-gray-300 text-gray-500">
                   <option value="" className="text-gray-500">Select a Budget(Optional)</option>
                   <option value="0-5K"className="tex-gray-700">$0-$5,000</option>
                   <option value="5-10K"className="tex-gray-700">$5,000-$10,000</option>
@@ -196,12 +290,24 @@ function Contact(){
                     
                   </div>  
                   <div className="ml-4 mt-2 flex-shrink-0">
+                    {
+                      loading ?
+                      <div
+                      
+                      className="relative inline-flex items-center rounded-md border border-transparent bg-orange-700 px-4 py-2 text-lm font-medium text-white shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    
+                    >
+                      <CircleLoader loading={loading} size={25} color='#ffff'/>
+                    </div>
+                    :
                     <button
                       type="submit"
                       className="relative inline-flex items-center rounded-md border border-transparent bg-orange-700 px-4 py-2 text-lm font-medium text-white shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                     >
                       Send Message
                     </button>
+                    }
+                    
                   </div>
                 </div>
               </div>
