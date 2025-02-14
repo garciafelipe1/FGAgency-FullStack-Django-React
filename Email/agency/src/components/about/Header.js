@@ -96,7 +96,7 @@ function Header(){
           <div className="mx-auto max-w-full xl:mx-12 xl:pt-32 xl:pb-40 lg:pt-40 lg:pb-40 pt-24 pb-12 ">
             <div>
               <div>
-                <h1 className="text-4xl font-semibold tracking-tight pb-8  sm:text-7xl">
+                <h1 className="text-4xl font-semibold tracking-tight pb-8  sm:text-5xl">
                   About us
                 </h1>
                 <p className="mt-6 text-2xl leading-10 text-black max-w-5xl">

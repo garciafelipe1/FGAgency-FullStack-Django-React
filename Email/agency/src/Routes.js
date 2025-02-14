@@ -14,6 +14,10 @@ import Category from 'containers/pages/Category';
 
 import PostDetail from 'containers/pages/PostDetail';
 import Search from 'containers/pages/Search';
+import OptIn from 'containers/pages/OptIn';
+import OptinCta from 'containers/pages/OptinCta';
+import Ecommerce from 'containers/pages/cases/Ecommerce';
+import JavascriptDev from 'containers/pages/Services/development/Javascriptdev';
 
 function AnimatedRoutes(){
 
@@ -28,7 +32,10 @@ function AnimatedRoutes(){
                     {/* Home Display */}
                     <Route path="/" element={<Home />} />
                     <Route path="/casos" element={<Cases />} />
+                    <Route path="/casos/ecommerce" element={<Ecommerce/>} />
                     <Route path="/servicios" element={<Services />} />
+                    <Route path="/servicios/javascript" element={<JavascriptDev />} />
+                    
                     <Route path="/nosotros" element={<About />} />
                     <Route path="/carreras" element={<Careers />} />
                     <Route path="/blog" element={<Blog />} />
@@ -36,6 +43,9 @@ function AnimatedRoutes(){
                     <Route path="/search/:term" element={<Search />} />
                     <Route path="/category/:slug" element={<Category />} />
                     <Route path="/contacto" element={<Contact />} />
+                    <Route path="/ebook" element={<OptIn />} />
+                    <Route path="/ebook/training" element={<OptinCta />} />
+                    
                 </Routes>
         </AnimatePresence>
     )

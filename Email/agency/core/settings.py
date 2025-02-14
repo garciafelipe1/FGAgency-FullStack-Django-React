@@ -191,6 +191,11 @@ CORS_ALLOWED_ORIGINS = [
 
 # Configuración de correo
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+ACTIVE_CAMPAIGN_KEY=os.environ.get('ACTIVE_CAMPAIGN_KEY')
+ACTIVE_CAMPAIGN_URL=os.environ.get('ACTIVE_CAMPAIGN_URL')
+
+
+
 
 DJOSER = {
     'LOGIN_FIELD': 'email',
@@ -221,3 +226,6 @@ if not DEBUG:
         "default": env.db("DATABASE_URL"),
     }
     DATABASES["default"]["ATOMIC_REQUESTS"] = True
+    
+
+
