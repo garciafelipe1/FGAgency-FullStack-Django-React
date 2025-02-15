@@ -1,6 +1,8 @@
 import CaseCard from "./CaseCard"
 import Carousel from '@itseasy21/react-elastic-carousel';
 
+
+
 function CasesList(){
 
     const posts = [
@@ -14,7 +16,7 @@ function CasesList(){
           date: 'Mar 16, 2020',
           datetime: '2020-03-16',
           imageUrl:
-            'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+            'https://i.pinimg.com/736x/01/8a/4f/018a4f1509eeb2689b7d07a9cc7f89ba.jpg',
           readingTime: '6 min',
           author: {
             name: 'Roel Aufderehar',
@@ -24,16 +26,16 @@ function CasesList(){
           },
         },
         {
-            id:'5678-asdf',
-          title: 'How to use search engine optimization to drive sales',
-          href: '#',
-          category: { name: 'Video', href: '#' },
+          id:'5678-asdf',
+          title: 'Web Development',
+          href: '/casos/web',
+          category: { name: 'Programming' },
           description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
+            'Tailored web solutions to enhance your business.',
           date: 'Mar 10, 2020',
           datetime: '2020-03-10',
           imageUrl:
-            'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+            'https://i.pinimg.com/736x/cc/1e/39/cc1e3975c4cd84854ec4c72d52ab6995.jpg',
           readingTime: '4 min',
           author: {
             name: 'Brenna Goyette',
@@ -43,16 +45,16 @@ function CasesList(){
           },
         },
         {
-            id:'4321-zxcv',
-          title: 'Improve your customer experience',
+          id:'4321-zxcv',
+          title: 'Cibersecurity',
           href: '#',
-          category: { name: 'Case Study', href: '#' },
+          category: { name: 'Programming' },
           description:
-            'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
+          'Protect your data and systems with our advanced solutions.',
           date: 'Feb 12, 2020',
           datetime: '2020-02-12',
           imageUrl:
-            'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+            'https://i.pinimg.com/736x/1c/90/e5/1c90e54c827284f57c8f738a9b612b6a.jpg',
           readingTime: '11 min',
           author: {
             name: 'Daniela Metz',
@@ -65,25 +67,39 @@ function CasesList(){
 
     const  breakPoints = [
         { width: 1, itemsToShow: 1, itemsToScroll: 1 },
-        { width: 1280, itemsToShow: 2, itemsToScroll: 2 },
-        { width: 1750, itemsToShow: 3, itemsToScroll: 2 },
+        { width: 768, itemsToShow: 2, itemsToScroll: 2 },
+        { width: 1350, itemsToShow: 3, itemsToScroll: 3},
         // { width: 1450, itemsToShow: 5 },
         // { width: 1750, itemsToShow: 6 },
     ]
 
     return(
-        <div className="relative  px-4 pt-16 pb-20 sm:px-6 lg:px-8  lg:pb-28">
+        <div className="relative px-2 pt-6 pb-16 sm:px-4 lg:px-10 lg:pb-20">
         <div className="absolute inset-0">
           <div className="h-1/3 bg-white sm:h-2/3" />
         </div>
         <div className="relative mx-auto max-w-full">
           
           <Carousel
-                itemsToScroll={3}
-                itemsToShow={3}
+                itemsToScroll={2}
+                itemsToShow={2}
                 breakPoints={breakPoints}
                 pagination={false}
                 itemPadding={[0, 48]}
+                renderArrow={({ type, onClick }) => (
+                  <button 
+                    onClick={onClick}
+                    
+                    style={{
+                      position: "relative",
+                      top: "-150px", // Ajusta según lo necesites
+                      
+                    }}
+                  >
+                    {type === "PREV" ? "◀" : "▶"}
+                  </button>
+                )}
+              
             >
           
             {posts.map((post, index) => (

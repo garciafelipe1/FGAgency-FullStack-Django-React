@@ -96,11 +96,11 @@ function Header(){
           <div className="mx-auto max-w-full xl:mx-12 xl:pt-40 xl:pb-64 lg:pt-40 lg:pb-48 pt-24 pb-12 ">
             <div>
               <div>
-                <h1 className="text-4xl font-semibold tracking-tight pb-16  sm:text-5xl">
-                  Software Development Services
+                <h1 className="text-4xl font-semibold tracking-tight pb-16  sm:text-6xl">
+                  Development Services
                 </h1>
-                <p className="mt-16 text-2xl max-w-3xl leading-8 text-black ">
-                We love to shake established thought-patterns and create what has never been attempted before. We take seeds and grow jungles
+                <p className="text-xl max-w-xl leading-relaxed text-gray-800 text-center md:text-left ">
+                Our expertise transforms visionary ideas into scalable, high-impact digital solutions that drive business success.
                 </p>
                 <div className="absolute bottom-0 left-0 flex space-x-6 xl:mx-20 mx-6">
                 {navigation.social.map((item) => (
