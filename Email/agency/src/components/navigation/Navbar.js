@@ -67,7 +67,7 @@ function Navbar(){
     const [open, setOpen] = useState(false)
 
     return(
-        <nav data-scroll data-scroll-id="hey" id='navbar' className='w-full py-6 top-0 transition duration-500 ease-in-out z-40 fixed'>
+        <nav data-scroll data-scroll-id="hey" id='navbar' className='w-full py-2  transition duration-500 ease-in-out z-50 fixed'>
           
 
             <div className="px-2 xl:px-4">

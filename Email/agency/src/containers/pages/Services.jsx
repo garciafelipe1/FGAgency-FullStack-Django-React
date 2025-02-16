@@ -6,10 +6,10 @@ import Layout from "hocs/layouts/Layout"
 import coding_img from 'assets/img/services/coding.png'
 import { useEffect } from "react"
 import {Helmet}from'react-helmet-async'
-const posts_software = [
-    {
-      title: 'Javascript Developers',
-      img: coding_img,
+const posts_software  = [
+    { 
+      title:  'Javascript Developers',
+      img: 'https://cdn-icons-png.flaticon.com/256/16103/16103299.png',
       href: '/servicios/javascript',
       category: { name: 'Development', href: '#' },
       description:
@@ -27,12 +27,12 @@ const posts_software = [
       },
     },
     {
-      title: 'How to use search engine optimization to drive sales',
+      title: 'Product Refresh',
       href: '#',
-      img: coding_img,
+      img: 'https://cdn-icons-png.flaticon.com/256/8787/8787141.png',
       category: { name: 'Video', href: '#' },
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
+        'We upgrade your product or service with the latest technology, ensuring it meets modern digital standards.',
       date: 'Mar 10, 2020',
       datetime: '2020-03-10',
       imageUrl:
@@ -46,12 +46,12 @@ const posts_software = [
       },
     },
     {
-      title: 'Improve your customer experience',
+      title: 'Full-Cycle Product Development',
       href: '#',
-      img: coding_img,
+      img: 'https://cdn-icons-png.flaticon.com/256/8750/8750730.png',
       category: { name: 'Case Study', href: '#' },
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
+        'FG Agency helps you bring ideas to life, from concept to design, development, and support.',
       date: 'Feb 12, 2020',
       datetime: '2020-02-12',
       imageUrl:
@@ -87,7 +87,7 @@ const posts_design = [
       },
     },
     {
-      title: 'How to use search engine optimization to drive sales',
+      title: 'Digital Product Design',
       href: '#',
       img: coding_img,
       category: { name: 'Video', href: '#' },
@@ -98,12 +98,7 @@ const posts_design = [
       imageUrl:
         'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
       readingTime: '4 min',
-      author: {
-        name: 'Brenna Goyette',
-        href: '#',
-        imageUrl:
-          'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      },
+     
     },
     {
       title: 'Improve your customer experience',
@@ -156,12 +151,12 @@ function Services(){
             <meta name="twitter:card" content="summary_large_image" />
         </Helmet>
             <Navbar/>
-            <div className="pt-28">
+            <div className="pt-8 ">
                 <Header/>
-                <div className="py-12 bg-gray-50">
+                <div className="py-16 bg-gray-50">
 
                 </div>
-                <ServicesList posts={posts_software} section_title={'Software and Product Development'}/>
+                <ServicesList  posts={posts_software} section_title={'Software and Product Development'}/>
                 <ServicesList posts={posts_design} section_title={'Design Services'}/>
             </div>
                 <Footer/>

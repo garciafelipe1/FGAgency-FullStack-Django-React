@@ -1,20 +1,39 @@
 const incentives = [
     {
-      name: 'Free shipping',
-      imageSrc: 'https://tailwindui.com/img/ecommerce/icons/icon-shipping-simple.svg',
-      description: "It's not actually free we just price it into the products. Someone's paying for it, and it's not us.",
+      name: 'JavaScript',
+      imageSrc: 'https://cdn-icons-png.flaticon.com/256/4325/4325483.png',
+      description: "Our team uses agile methodologies to optimize every stage of development. We prioritize transparency, communication, and collaboration to create high-quality solutions tailored to your needs.",
     },
     {
-      name: '10-year warranty',
-      imageSrc: 'https://tailwindui.com/img/ecommerce/icons/icon-warranty-simple.svg',
-      description: "If it breaks in the first 10 years we'll replace it. After that you're on your own though.",
+      name: 'Python',
+      imageSrc: 'https://cdn-icons-png.flaticon.com/256/2/2181.png',
+      description: "Our digital product studio specializes in Python development, ensuring that our teams stay up to date with the latest industry standards and best practices. We have extensive experience working with Python libraries and frameworks, allowing us to create efficient, scalable, and user-friendly digital solutions.",
     },
     {
-      name: 'Exchanges',
-      imageSrc: 'https://tailwindui.com/img/ecommerce/icons/icon-exchange-simple.svg',
+      name: 'Experienced Designers',
+      imageSrc: 'https://cdn-icons-png.flaticon.com/256/644/644576.png',
       description:
-        "If you don't like it, trade it to one of your friends for something of theirs. Don't send it here though.",
+        "At FG digital product development agency, designers work closely with the development team to create engaging and functional user interfaces. We employ a user-centered approach to ensure your product’s design aligns with your business goals, brand identity, and target audience. It’s no surprise that we have been ranked among the top 10 design studios on Dribbble.",
     },
+    {
+      name: 'Experienced Designers',
+      imageSrc: 'https://cdn-icons-png.flaticon.com/256/644/644576.png',
+      description:
+        "At FG digital product development agency, designers work closely with the development team to create engaging and functional user interfaces. We employ a user-centered approach to ensure your product’s design aligns with your business goals, brand identity, and target audience. It’s no surprise that we have been ranked among the top 10 design studios on Dribbble.",
+    },
+    {
+      name: 'Experienced Designers',
+      imageSrc: 'https://cdn-icons-png.flaticon.com/256/644/644576.png',
+      description:
+        "At FG digital product development agency, designers work closely with the development team to create engaging and functional user interfaces. We employ a user-centered approach to ensure your product’s design aligns with your business goals, brand identity, and target audience. It’s no surprise that we have been ranked among the top 10 design studios on Dribbble.",
+    },
+    {
+      name: 'Experienced Designers',
+      imageSrc: 'https://cdn-icons-png.flaticon.com/256/644/644576.png',
+      description:
+        "At FG digital product development agency, designers work closely with the development team to create engaging and functional user interfaces. We employ a user-centered approach to ensure your product’s design aligns with your business goals, brand identity, and target audience. It’s no surprise that we have been ranked among the top 10 design studios on Dribbble.",
+    },
+    
   ]
   
   export default function Incentives() {
@@ -23,13 +42,11 @@ const incentives = [
         <div className="mx-auto lg:mx-12 max-w-full py-24 sm:px-2 sm:py-32 lg:px-4">
           <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
             <div className="max-w-3xl">
-              <h2 className="text-4xl font-bold tracking-tight text-gray-900">
-                We built our business on customer service
+              <h2 className="text-4xl font-mathsans tracking-tight text-gray-900">
+                Why should you choose FG digital product agency?
               </h2>
               <p className="mt-4 text-gray-500">
-                At the beginning at least, but then we realized we could make a lot more money if we kinda stopped caring
-                about that. Our new strategy is to write a bunch of things that look really good in the headlines, then
-                clarify in the small print but hope people don't actually read it.
+              We bring digital experiences to life with a strategic and creative approach. Our team of 50 visual interaction and technology specialists has worked for over six years driving ideas and taking projects to the next level.
               </p>
             </div>
             <div className="mt-16 grid grid-cols-1 gap-y-10 gap-x-8 lg:grid-cols-3">

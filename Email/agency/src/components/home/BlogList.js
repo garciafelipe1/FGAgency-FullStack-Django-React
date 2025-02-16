@@ -1,54 +1,53 @@
-
-
 const posts = [
-    {
-      title: 'Boost your conversion rate',
+  {
+    title: 'Mastering UX: How to Create Seamless User Experiences',
+    href: '#',
+    category: { name: 'Design', href: '#', color: 'bg-blue-100 text-blue-800' },
+    description:
+      'Discover the key principles behind user experience and how to enhance usability across digital platforms.',
+    date: 'Jan 22, 2024',
+    datetime: '2024-01-22',
+    author: {
+      name: 'John Carter',
       href: '#',
-      category: { name: 'Article', href: '#', color: 'bg-indigo-100 text-indigo-800' },
-      description:
-        'Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.',
-      date: 'Mar 16, 2020',
-      datetime: '2020-03-16',
-      author: {
-        name: 'Paul York',
-        href: '#',
-        imageUrl:
-          'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      },
-      readingTime: '6 min',
+      imageUrl:
+        'https://i.pinimg.com/736x/e8/e6/41/e8e64141f4c0ae39c32f9701ccea9a2e.jpg',
     },
-    {
-      title: 'How to use search engine optimization to drive sales',
+    readingTime: '8 min',
+  },
+  {
+    title: 'AI in Marketing: The Future of Personalized Advertising',
+    href: '#',
+    category: { name: 'Tech', href: '#', color: 'bg-red-100 text-red-800' },
+    description:
+      'Explore how artificial intelligence is transforming marketing strategies and creating hyper-personalized experiences.',
+    date: 'Feb 5, 2024',
+    datetime: '2024-02-05',
+    author: {
+      name: 'Liam Thompson',
       href: '#',
-      category: { name: 'Video', href: '#', color: 'bg-pink-100 text-pink-800' },
-      description:
-        'Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus arcu.',
-      date: 'Mar 10, 2020',
-      datetime: '2020-03-10',
-      author: {
-        name: 'Dessie Ryan',
-        href: '#',
-        imageUrl:
-          'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      },
-      readingTime: '4 min',
+      imageUrl:
+        'https://i.pinimg.com/736x/8d/e6/21/8de621e960298a6c9374933bbd91a69d.jpg',
     },
-    {
-      title: 'Improve your customer experience',
+    readingTime: '5 min',
+  },
+  {
+    title: 'Cybersecurity Trends in 2024: Staying Ahead of Threats',
+    href: '#',
+    category: { name: 'Security', href: '#', color: 'bg-gray-100 text-pink-800' },
+    description: 'A look at emerging cybersecurity threats and best practices to protect your data and privacy.',
+    date: 'Apr 8, 2024',
+    datetime: '2024-04-08',
+    author: {
+      name: 'Michael Brown',
       href: '#',
-      category: { name: 'Case Study', href: '#', color: 'bg-green-100 text-green-800' },
-      description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ab iure iusto fugiat commodi sequi.',
-      date: 'Feb 12, 2020',
-      datetime: '2020-02-12',
-      author: {
-        name: 'Easer Collins',
-        href: '#',
-        imageUrl:
-          'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      },
-      readingTime: '11 min',
+      imageUrl:
+        'https://i.pinimg.com/736x/51/3f/63/513f63a00960b3c71cca5b20ad84d80d.jpg',
     },
-  ]
+    readingTime: '6 min',
+  },
+  
+];
   
   function classNames(...classes) {
     return classes.filter(Boolean).join(' ')
@@ -58,15 +57,14 @@ const posts = [
     
     return (
       <div className="bg-white px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
-        <div className="relative mx-auto lg:mx-12 max-w-lg divide-y-2 divide-gray-200 lg:max-w-full">
+        <div className="relative mx-auto lg:mx-4 max-w-lg divide-y-2 divide-gray-200 lg:max-w-full">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Recent publications</h2>
+            <h2 className=" text-3xl font-mathsans tracking-tight text-gray-900 sm:text-4xl">Recent publications</h2>
             <p className="mt-3 text-xl text-gray-500 sm:mt-4">
-              Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus
-              arcu.
+            Explore groundbreaking trends, expert opinions, and inspiring success stories that shape the future of our industry.
             </p>
           </div>
-          <div className="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+          <div className=" grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
             {posts.map((post) => (
               <div key={post.title}>
                 <div>

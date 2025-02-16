@@ -24,7 +24,7 @@ function Home(){
                 <Incentives/>
                 <UseCases/>
                 <Features/>
-                <CTA/>
+                
                 <LogoCloud/>
                 <BlogList/>
             </div>
