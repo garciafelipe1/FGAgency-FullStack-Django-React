@@ -1,9 +1,9 @@
 export default function LogoCloud() {
     return (
-    <div className="relative mx-auto lg:mx-12 max-w-lg divide-y-2 divide-gray-200 lg:max-w-full" >
+    <div className="relative mx-auto lg:mx-12 max-w-lg  lg:max-w-full" >
     <h2 className="text-3xl font-mathsans tracking-tight text-gray-900 sm:text-3xl">Our clients</h2>
     <p className="mt-3 text-xl text-gray-500 sm:mt-4">
-              <p className="mt-3 text-xl text-gray-500 sm:mt-4 ">
+              <p className="mt-3 text-xl text-gray-500 sm:mt-3 ">
               We believe brands are the cultural connection between companies and their communities.
             </p>
             </p>

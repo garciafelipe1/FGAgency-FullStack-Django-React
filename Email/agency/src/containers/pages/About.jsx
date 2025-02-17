@@ -159,13 +159,13 @@ function About(){
                 <ServicesListJunior posts={posts_design} />
                 <ServicesListJunior posts={posts_software} />
                 <Team/>
-                <div className="bg-white py-8 px-4 sm:px-6 lg:px-8 lg:py-16">
+                <div className="bg-white py-16 px-4 sm:px-6 lg:px-8 lg:py-16">
                   <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-4xl xl:max-w-none">
                   <h2 className="text-3xl font-modern tracking-tight sm:text-3xl">Our Approachess</h2>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-gray-400">
                   We believe that to build a product without a deep business and audience research is the same as shooting in the dark with the fingers crossed. Our expert team takes a systematic approach to develop digital experiences that step-by-step lead a business to success.  We believe that product usability is like love. You should care, listen, and you have to be willing to change and fix your infelicities. So we pay particular attention to user testing and aim to deliver better products that will be quickly-loved by people.
                   </p>
-                </div>
+                  </div>
                 </div>
                 
                 <ImagesJunior/>

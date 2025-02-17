@@ -2,56 +2,53 @@ import { CheckIcon } from '@heroicons/react/24/outline'
 
 const features = [
   {
-    name: 'Invite team members',
-    description: 'Tempor tellus in aliquet eu et sit nulla tellus. Suspendisse est, molestie blandit quis ac. Lacus.',
+    name: 'Innovation',
+    description: 'We embrace creativity and forward-thinking to drive meaningful change and progress.',
   },
   {
-    name: 'Notifications',
-    description: 'Ornare donec rhoncus vitae nisl velit, neque, mauris dictum duis. Nibh urna non parturient.',
+    name: 'Collaboration',
+    description: 'Working together with trust and transparency to achieve shared goals and success.',
   },
   {
-    name: 'List view',
-    description: 'Etiam cras augue ornare pretium sit malesuada morbi orci, venenatis. Dictum lacus.',
+    name: 'Excellence',
+    description: 'Striving for the highest standards in everything we do, from ideas to execution.',
   },
   {
-    name: 'Boards',
-    description: 'Interdum quam pulvinar turpis tortor, egestas quis diam amet, natoque. Mauris sagittis.',
+    name: 'Leadership',
+    description: 'Inspiring and guiding with vision, responsibility, and a commitment to positive impact.',
   },
   {
-    name: 'Keyboard shortcuts',
-    description: 'Ullamcorper in ipsum ac feugiat. Senectus at aliquam vulputate mollis nec. In at risus odio.',
+    name: 'Commitment',
+    description: 'Dedicated to delivering value, staying accountable, and exceeding expectations.',
   },
   {
-    name: 'Reporting',
-    description: 'Magna a vel sagittis aliquam eu amet. Et lorem auctor quam nunc odio. Sed bibendum.',
+    name: 'Integrity',
+    description: 'Upholding honesty, ethics, and responsibility in every decision and action.',
   },
   {
-    name: 'Calendars',
-    description: 'Sed mi, dapibus turpis orci posuere integer. A porta viverra posuere adipiscing turpis.',
+    name: 'Resilience',
+    description: 'Adapting to challenges with determination, agility, and a growth mindset.',
   },
   {
-    name: 'Mobile app',
-    description: 'Quisque sapien nunc nisl eros. Facilisis sagittis maecenas id dignissim tristique proin sed.',
+    name: 'Success Together',
+    description: 'Achieving greatness through teamwork, shared vision, and collective effort.',
   },
 ]
 
 export default function Features() {
   return (
     <div className="bg-white">
-      <div className="mx-auto lg:mx-12 max-w-full py-16 px-4 sm:px-6 lg:py-24 lg:px-8">
+      <div className="relative mx-auto  mt-8 max-w-lg mb-8 lg:max-w-full">
         <div className="mx-auto lg:mx-12 max-w-full ">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900">All-in-one platform</h2>
+          <h2 className="text-3xl font-Modern tracking-tight text-gray-900">Cultures and Values</h2>
           <p className="mt-4 text-lg text-gray-500">
-            Ac euismod vel sit maecenas id pellentesque eu sed consectetur. Malesuada adipiscing sagittis vel nulla nec.
+          Great achievements happen when vision, teamwork, and commitment align.
           </p>
         </div>
-        <dl className="mt-12 space-y-10 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-4 lg:gap-x-8">
+        <dl className="mt-6 space-y-10 lg:mx-8 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-4 lg:gap-x-8">
           {features.map((feature) => (
             <div key={feature.name} className="relative">
-              <dt>
-                <CheckIcon className="absolute h-6 w-6 text-green-500" aria-hidden="true" />
-                <p className="ml-9 text-lg font-medium leading-6 text-gray-900">{feature.name}</p>
-              </dt>
+              <dd className='mt-2 ml-9 text-lg font-semibold text-black-500'>{feature.name}</dd>
               <dd className="mt-2 ml-9 text-base text-gray-500">{feature.description}</dd>
             </div>
           ))}

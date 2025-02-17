@@ -184,10 +184,12 @@ class EditBlogPostView(APIView):
                 post.category = category
                 post.save()
 
-        if(data['thumbnail']):
-            if not (data['thumbnail'] == 'undefined'):
+        if data.get('thumbnail'):
+            if data['thumbnail'] != 'undefined':
+                print("Thumbnail recibido:", data['thumbnail'])  # Debugging
                 post.thumbnail = data['thumbnail']
                 post.save()
+
 
         return Response({'success': 'Post edited'})
     
