@@ -66,14 +66,14 @@ const posts_software  = [
     },
   ]
   
-const posts_design = [
+  const posts_design = [
     {
-      title: 'Boost your conversion rate',
-      img: coding_img,
+      title: 'Digital Products Design',
+      img: 'https://cdn-icons-png.flaticon.com/256/7889/7889817.png',
       href: '#',
       category: { name: 'Article', href: '#' },
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto accusantium praesentium eius, ut atque fuga culpa, similique sequi cum eos quis dolorum.',
+        'Best practices and tools for designing intuitive and user-centric digital products.',
       date: 'Mar 16, 2020',
       datetime: '2020-03-16',
       imageUrl:
@@ -87,39 +87,22 @@ const posts_design = [
       },
     },
     {
-      title: 'Digital Product Design',
+      title: 'Branding Strategy',
       href: '#',
-      img: coding_img,
+      img: 'https://cdn-icons-png.flaticon.com/256/17227/17227794.png',
       category: { name: 'Video', href: '#' },
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit facilis asperiores porro quaerat doloribus, eveniet dolore. Adipisci tempora aut inventore optio animi., tempore temporibus quo laudantium.',
-      date: 'Mar 10, 2020',
-      datetime: '2020-03-10',
-      imageUrl:
-        'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-      readingTime: '4 min',
-     
+        'Key strategies to build a strong, distinctive, and engaging brand identity.',
     },
     {
-      title: 'Improve your customer experience',
+      title: 'Outstaffing and Offshoring',
       href: '#',
-      img: coding_img,
+      img: 'https://cdn-icons-png.flaticon.com/256/8452/8452029.png',
       category: { name: 'Case Study', href: '#' },
       description:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint harum rerum voluptatem quo recusandae magni placeat saepe molestiae, sed excepturi cumque corporis perferendis hic.',
-      date: 'Feb 12, 2020',
-      datetime: '2020-02-12',
-      imageUrl:
-        'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
-      readingTime: '11 min',
-      author: {
-        name: 'Daniela Metz',
-        href: '#',
-        imageUrl:
-          'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-      },
+        'Insights into the benefits and challenges of remote workforce management.',
     },
-  ]
+  ];
 
 function Services(){
   useEffect(()=>{

@@ -12,18 +12,11 @@ function Clients(){
                             scelerisque amet ullamcorper eu enim et fermentum, augue.
                         </p>
                         <div className="mt-8 sm:flex">
-                            <div className="rounded-md shadow">
-                            <a
-                                href="#"
-                                className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700"
-                            >
-                                Create Account
-                            </a>
-                            </div>
+                            
                             <div className="mt-3 sm:mt-0 sm:ml-3">
                             <a
-                                href="#"
-                                className="flex items-center justify-center rounded-md border border-transparent bg-indigo-100 px-5 py-3 text-base font-medium text-indigo-700 hover:bg-indigo-200"
+                                href="contacto/"
+                                className="flex items-center justify-center rounded-md border border-transparent bg-orange-700 px-5 py-3 text-base font-medium text-white hover:bg-white-200"
                             >
                                 Contact Us
                             </a>

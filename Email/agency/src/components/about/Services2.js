@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-function ServiceCard({ data, index }) {
+function ServiceCardJunior({ data, index }) {
   const [hovered, setHovered] = useState(false);
 
   return (
@@ -16,18 +16,9 @@ function ServiceCard({ data, index }) {
         <p className="text-lg font-regular text-gray-500 pt-4">{data.description}</p>
       </div>
       {/* Posiciona el Learn More casi en el límite de la tarjeta */}
-      <div className="absolute bottom left-0 w-full flex justify-center py-12">
-        <Link
-          to={data.href}
-          className={`text-xl font-modern transition-colors duration-200 ${
-            hovered ? "text-orange-500" : "text-gray-900"
-          }`}
-        >
-          Learn More
-        </Link>
-      </div>
+     
     </div>
   );
 }
 
-export default ServiceCard;
+export default ServiceCardJunior;

@@ -2,13 +2,116 @@ import Clients from "components/about/Clients"
 import Features from "components/about/Features"
 import Header from "components/about/Header"
 import Images from "components/about/Images"
+import ImagesJunior from "components/about/Images2"
+import ServicesListJunior from "components/about/ServiceList2"
 import Team from "components/about/Team"
 import TestStats from "components/about/TestStats"
+import LogoCloud from "components/home/LogoCloud"
 import Footer from "components/navigation/Footer"
 import Navbar from "components/navigation/Navbar"
+import ServicesList from "components/services/ServicesList"
 import Layout from "hocs/layouts/Layout"
 import { useEffect } from "react"
 import { Helmet } from 'react-helmet-async';
+
+
+const posts_software  = [
+  { 
+    title:  'Javascript Developers',
+    img: 'https://cdn-icons-png.flaticon.com/256/16103/16103299.png',
+    href: '/servicios/javascript',
+    category: { name: 'Development', href: '#' },
+    description:
+      'Talented  and Agile Javascript developers for your project, available 24/7.',
+    date: 'Mar 16, 2020',
+    datetime: '2020-03-16',
+    imageUrl:
+      'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+    readingTime: '6 min',
+    author: {
+      name: 'Roel Aufderehar',
+      href: '#',
+      imageUrl:
+        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    },
+  },
+  {
+    title: 'Product Refresh',
+    href: '#',
+    img: 'https://cdn-icons-png.flaticon.com/256/8787/8787141.png',
+    category: { name: 'Video', href: '#' },
+    description:
+      'We upgrade your product or service with the latest technology, ensuring it meets modern digital standards.',
+    date: 'Mar 10, 2020',
+    datetime: '2020-03-10',
+    imageUrl:
+      'https://images.unsplash.com/photo-1547586696-ea22b4d4235d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+    readingTime: '4 min',
+    author: {
+      name: 'Brenna Goyette',
+      href: '#',
+      imageUrl:
+        'https://images.unsplash.com/photo-1550525811-e5869dd03032?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    },
+  },
+  {
+    title: 'Full-Cycle Product Development',
+    href: '#',
+    img: 'https://cdn-icons-png.flaticon.com/256/8750/8750730.png',
+    category: { name: 'Case Study', href: '#' },
+    description:
+      'FG Agency helps you bring ideas to life, from concept to design, development, and support.',
+    date: 'Feb 12, 2020',
+    datetime: '2020-02-12',
+    imageUrl:
+      'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+    readingTime: '11 min',
+    author: {
+      name: 'Daniela Metz',
+      href: '#',
+      imageUrl:
+        'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    },
+  },
+]
+
+const posts_design = [
+  {
+    title: 'Digital Products Design',
+    img: 'https://cdn-icons-png.flaticon.com/256/7889/7889817.png',
+    href: '#',
+    category: { name: 'Article', href: '#' },
+    description:
+      'Best practices and tools for designing intuitive and user-centric digital products.',
+    date: 'Mar 16, 2020',
+    datetime: '2020-03-16',
+    imageUrl:
+      'https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80',
+    readingTime: '6 min',
+    author: {
+      name: 'Roel Aufderehar',
+      href: '#',
+      imageUrl:
+        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    },
+  },
+  {
+    title: 'Branding Strategy',
+    href: '#',
+    img: 'https://cdn-icons-png.flaticon.com/256/17227/17227794.png',
+    category: { name: 'Video', href: '#' },
+    description:
+      'Key strategies to build a strong, distinctive, and engaging brand identity.',
+  },
+  {
+    title: 'Outstaffing and Offshoring',
+    href: '#',
+    img: 'https://cdn-icons-png.flaticon.com/256/8452/8452029.png',
+    category: { name: 'Case Study', href: '#' },
+    description:
+      'Insights into the benefits and challenges of remote workforce management.',
+  },
+];
 
 function About(){
     useEffect(()=>{
@@ -44,65 +147,28 @@ function About(){
             <div className="pt-28">
                 <Header/>
                 <TestStats/>
+                <LogoCloud/>
                 <Images/>
-                <Clients/>
+                
                 <div className="bg-white">
                 <div className="mx-auto max-w-7xl py-12 px-4 sm:px-6 lg:px-8">
-                    <div className="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">
-                    <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                        <img className="h-12" src="https://tailwindui.com/img/logos/tuple-logo-gray-400.svg" alt="Tuple" />
-                    </div>
-                    <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                        <img className="h-12" src="https://tailwindui.com/img/logos/mirage-logo-gray-400.svg" alt="Mirage" />
-                    </div>
-                    <div className="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
-                        <img className="h-12" src="https://tailwindui.com/img/logos/statickit-logo-gray-400.svg" alt="StaticKit" />
-                    </div>
-                    <div className="col-span-1 flex justify-center md:col-span-3 lg:col-span-1">
-                        <img
-                        className="h-12"
-                        src="https://tailwindui.com/img/logos/transistor-logo-gray-400.svg"
-                        alt="Transistor"
-                        />
-                    </div>
-                    <div className="col-span-2 flex justify-center md:col-span-3 lg:col-span-1">
-                        <img
-                        className="h-12"
-                        src="https://tailwindui.com/img/logos/workcation-logo-gray-400.svg"
-                        alt="Workcation"
-                        />
-                    </div>
-                    </div>
+                    
+                    
                 </div>
                 </div>
-                <Features/>
+                <ServicesListJunior posts={posts_design} />
+                <ServicesListJunior posts={posts_software} />
                 <Team/>
-                <div className="bg-white">
-      <div className="mx-12 max-w-full py-12 px-4 sm:px-6 lg:flex lg:items-center lg:justify-between lg:py-16 lg:px-8">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-          <span className="block">Ready to dive in?</span>
-          <span className="block text-indigo-600">Start your free trial today.</span>
-        </h2>
-        <div className="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-          <div className="inline-flex rounded-md shadow">
-            <a
-              href="#"
-              className="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700"
-            >
-              Get started
-            </a>
-          </div>
-          <div className="ml-3 inline-flex rounded-md shadow">
-            <a
-              href="#"
-              className="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-600 hover:bg-indigo-50"
-            >
-              Learn more
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
+                <div className="bg-white py-8 px-4 sm:px-6 lg:px-8 lg:py-16">
+                  <div className="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-4xl xl:max-w-none">
+                  <h2 className="text-3xl font-modern tracking-tight sm:text-3xl">Our Approachess</h2>
+                  <p className="text-sm text-gray-500">
+                  We believe that to build a product without a deep business and audience research is the same as shooting in the dark with the fingers crossed. Our expert team takes a systematic approach to develop digital experiences that step-by-step lead a business to success.  We believe that product usability is like love. You should care, listen, and you have to be willing to change and fix your infelicities. So we pay particular attention to user testing and aim to deliver better products that will be quickly-loved by people.
+                  </p>
+                </div>
+                </div>
+                
+                <ImagesJunior/>
             </div>
                 <Footer/>
         </Layout>
