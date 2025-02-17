@@ -1,36 +1,42 @@
-import { Link } from "react-router-dom"
+import { Link,useNavigate } from "react-router-dom"
 import {useEffect}from'react'
 
 import moment from 'moment'
 function BlogCardHorizontal({data,index}){
 
-    
+  const navigate = useNavigate()    
     return(
         <li 
         >
-          <Link to={`/blog/${data.slug}`}
-              onMouseEnter={()=>{
-                  // const img = document.getElementById(index)
-                  // img.classList.add('object-fill')
-                  const title = document.getElementById(`title`+data.id)
-                  title.classList.add('text-orange-500')
-              }} 
-              onMouseLeave={()=>{
-                  // const img = document.getElementById(index)
-                  // img.classList.remove('object-fill')
-                  const title = document.getElementById(`title`+data.id)
-                  title.classList.remove('text-orange-500')
-              }}
-          className="block relative hover:shadow-card rounded-md transition duration-300 ease-in-out">
+         <Link
+                to={`/blog/${data.slug}`}
+                onMouseEnter={() => {
+                  const title = document.getElementById(`title` + data.id);
+                  if (title) { // Verifica si el elemento existe antes de modificarlo
+                    title.classList.add("text-orange-500");
+                  }
+                }}
+                onMouseLeave={() => {
+                  const title = document.getElementById(`title` + data.id);
+                  if (title) { // Verifica si el elemento existe antes de modificarlo
+                    title.classList.remove("text-orange-500");
+                  }
+                }}
+                className="block relative hover:shadow-card rounded-md transition duration-300 ease-in-out"
+              >
             <div className="flex items-center   my-10 ">
               <div className="lg:flex min-w-0 lg:flex-1 items-center">
-                <figure className="lg:flex-shrink-0">
-                  {
-                    data.thumbnail?
-                    <img id={index} className="h-64 lg:w-96 w-full object-cover rounded" src={data.thumbnail} alt="" />
-                    :
-                    <div className=" h-64 lg:w-96 w-full object-cover rounded bg-gray-100"></div>
-                  }
+              <figure className="lg:flex-shrink-0">
+                  {data?.thumbnail ? (
+                    <img
+                      className="h-64 lg:w-96 w-full object-cover rounded"
+                      src={data.thumbnail}
+                      alt={data?.title || "Imagen del blog"}
+                      onError={(e) => e.target.src = "/media/imagen1.png"} // Imagen de respaldo
+                    />
+                  ) : (
+                    <div className="h-64 lg:w-96 w-full object-cover rounded bg-gray-100"></div>
+                  )}
                 </figure>
                 <div className="min-w-0 flex-1 px-8 p-4 ">
                   {
@@ -53,10 +59,17 @@ function BlogCardHorizontal({data,index}){
 
                       }
                       {
-                        data.category &&
-                        <>
-                        <span className=" hover:text-orange-500  mx-1 font-medium text-gray-800 text-sm "><Link to={`/category/${data.category.slug}`}>{data.category.name}</Link></span> <span className="text-gray-300">&middot;</span> 
-                        </>
+                        data.category && (
+                          <>
+                            <span
+                              onClick={() => navigate(`/category/${data.category.slug}`)}
+                              className="hover:text-orange-500 mx-1 font-medium text-gray-800 text-sm cursor-pointer"
+                            >
+                              {data.category.name}
+                            </span>
+                            <span className="text-gray-300">&middot;</span>
+                          </>
+                        )
                       }
                       <span className="mt-2 ml-2 mr-1 font-medium text-gray-800 text-sm">{moment(data.published).format('LL')}</span> <span className="text-gray-300">&middot;</span>
                       <span className="mt-2 mx-2 font-medium text-gray-800 text-sm">{data.time_read} min read</span> 
