@@ -2,7 +2,6 @@ import Features from "components/careers/Features"
 import Header from "components/careers/Header"
 import PositionsList from "components/careers/PositionsList"
 import Testimonial from "components/careers/Testimonial"
-import LogoCloud from "components/home/LogoCloud"
 import Footer from "components/navigation/Footer"
 import Navbar from "components/navigation/Navbar"
 import Layout from "hocs/layouts/Layout"
@@ -39,12 +38,9 @@ function Careers(){
             <meta name="twitter:card" content="summary_large_image" />
         </Helmet>
             <Navbar/>
-            <div className="pt-28">
+            <div className="pt-20 sm:pt-28 overflow-x-hidden">
                 <Header/>
                 <Testimonial/>
-                <div className="bg-white-50">
-                <LogoCloud/>
-                </div>
                 <Features/>
                 <PositionsList/>
             </div>

@@ -91,29 +91,29 @@ function Header(){
     
 
     return(
-        <main>
-        <div className="relative px-6 lg:px-8">
-          <div className="mx-auto max-w-full xl:mx-12 xl:pt-40 xl:pb-64 lg:pt-40 lg:pb-48 pt-24 pb-12  ">
+        <main className="overflow-x-hidden">
+        <div className="relative px-4 sm:px-6 lg:px-8 max-w-full">
+          <div className="mx-auto max-w-full xl:mx-12 xl:pt-40 xl:pb-64 lg:pt-40 lg:pb-48 pt-20 sm:pt-24 pb-24 sm:pb-12">
             <div>
               <div>
-                <h1 className="text-4xl font-semibold tracking-tight pb-16  sm:text-6xl">
+                <h1 className="text-2xl sm:text-4xl font-semibold tracking-tight pb-8 sm:pb-16 md:text-5xl lg:text-6xl">
                   Case Studies
                 </h1>
-                <p className="text-xl max-w-xl leading-relaxed text-gray-800 text-center md:text-left">
+                <p className="text-base sm:text-xl max-w-xl leading-relaxed text-gray-800 text-center md:text-left">
                   Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt
                   amet fugiat veniam occaecat fugiat aliqua.
                 </p>
-                <div className="absolute bottom-0 left-0 flex space-x-6 xl:mx-20 mx-6">
+                <div className="mt-8 sm:mt-0 sm:absolute sm:bottom-0 sm:left-0 flex flex-wrap gap-4 sm:space-x-6 xl:mx-20 mx-0 sm:mx-6">
                 {navigation.social.map((item) => (
                   <a key={item.name} href={item.href} className="text-gray-900 hover:text-gray-800">
                     <span className="sr-only">{item.name}</span>
-                    <item.icon className="h-8 w-8" aria-hidden="true" />
+                    <item.icon className="h-6 w-6 sm:h-8 sm:w-8" aria-hidden="true" />
                   </a>
                 ))}
                 </div>
               </div>
-              <div className="absolute inset-x-0 top-[calc(100%-20rem)] -z-10 transform-gpu overflow-hidden bg-white blur-lg lg:top-[calc(100%-45rem)] sm:top-[calc(100%-30rem)]">
-                <img src="https://bafybeicgamofiuvkc6wjxl4wwzzh6pdovhcvvyc2gw5verruiolnykzz3i.ipfs.w3s.link/bbub3.jpg" className='w-full h-full object-cover'/>
+              <div className="absolute inset-x-0 top-[calc(100%-20rem)] -z-10 transform-gpu overflow-hidden bg-white blur-lg lg:top-[calc(100%-45rem)] sm:top-[calc(100%-30rem)] min-h-[12rem]">
+                <img src="https://bafybeicgamofiuvkc6wjxl4wwzzh6pdovhcvvyc2gw5verruiolnykzz3i.ipfs.w3s.link/bbub3.jpg" className='w-full h-full object-cover max-w-full' alt=""/>
               </div>
             </div>
           </div>

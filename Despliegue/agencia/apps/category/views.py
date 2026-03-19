@@ -37,4 +37,4 @@ class ListCategoriesView(APIView):
 
             return Response({'categories': result}, status=status.HTTP_200_OK)
         else:
-            return Response({'error': 'No categories found'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({'categories': []}, status=status.HTTP_200_OK)

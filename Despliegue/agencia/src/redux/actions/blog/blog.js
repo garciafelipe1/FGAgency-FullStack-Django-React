@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { API_URL } from 'config';
 import {
     GET_BLOG_LIST_SUCCESS,
     GET_BLOG_LIST_FAIL,
@@ -21,7 +22,7 @@ export const get_blog_list = () => async dispatch => {
 
     try{
 
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/blog/list`, config)
+        const res = await axios.get(`${API_URL}/api/blog/list`, config)
 
         if(res.status === 200){
             dispatch({
@@ -50,7 +51,7 @@ export const get_blog_list_page = (page) => async dispatch => {
 
     try{
 
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/blog/list?p=${page}`, config)
+        const res = await axios.get(`${API_URL}/api/blog/list?p=${page}`, config)
 
         if(res.status === 200){
             dispatch({
@@ -79,7 +80,7 @@ export const get_blog_list_category = (slug) => async dispatch => {
 
     try{
 
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/blog/by_category?slug=${slug}`, config)
+        const res = await axios.get(`${API_URL}/api/blog/by_category?slug=${slug}`, config)
 
         if(res.status === 200){
             dispatch({
@@ -108,7 +109,7 @@ export const get_blog_list_category_page = (slug, page) => async dispatch => {
 
     try{
 
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/blog/by_category?slug=${slug}&p=${page}`, config)
+        const res = await axios.get(`${API_URL}/api/blog/by_category?slug=${slug}&p=${page}`, config)
 
         if(res.status === 200){
             dispatch({
@@ -136,7 +137,7 @@ export const get_blog = (slug) => async dispatch => {
     };
 
     try {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/blog/detail/${slug}`, config);
+        const res = await axios.get(`${API_URL}/api/blog/detail/${slug}`, config);
 
         if (res.status === 200) {
             dispatch({
@@ -164,7 +165,7 @@ export const search_blog = (search_term) => async dispatch => {
     };
 
     try {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/blog/search?s=${search_term}`, config);
+        const res = await axios.get(`${API_URL}/api/blog/search?s=${search_term}`, config);
 
         if (res.status === 200) {
             dispatch({
@@ -192,7 +193,7 @@ export const search_blog_page = (search_term,page) => async dispatch => {
     };
 
     try {
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/blog/search?p=${page}&s=${search_term}`, config);
+        const res = await axios.get(`${API_URL}/api/blog/search?p=${page}&s=${search_term}`, config);
 
         if (res.status === 200) {
             dispatch({

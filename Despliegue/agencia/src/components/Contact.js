@@ -8,6 +8,7 @@ import { Switch } from '@headlessui/react'
 import { useState } from 'react'
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "config";
 import CircleLoader from "react-spinners/CircleLoader";
 function Contact() {
 
@@ -56,7 +57,7 @@ function Contact() {
         formdata.append("budget",budget)
 
         const fetchData=async()=>{
-          const res= await axios.post(`${process.env.REACT_APP_API_URL}/api/contacts/`,formdata,config)
+          const res= await axios.post(`${API_URL}/api/contacts/`,formdata,config)
 
           if(res.status===200){
             setLoading(false)

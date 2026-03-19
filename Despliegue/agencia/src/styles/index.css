@@ -30,8 +30,16 @@ opacity: 10px;
 border-radius: 10px;
 }
 
+html {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
 body {
   height: 100vh;
+  overflow-x: hidden;
+  max-width: 100vw;
+  min-width: 0;
 }
 
 .rec.rec-arrow {

@@ -93,15 +93,16 @@ function Footer(){
         <h2 id="footer-heading" className="sr-only">
           Footer
         </h2>
-        <div className="mx-auto max-w-full py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+        <div className="mx-auto max-w-full py-8 px-4 sm:px-6 sm:py-12 lg:py-16 lg:px-8">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-            <div className="space-y-8 xl:col-span-1">
+            <div className="space-y-6 sm:space-y-8 xl:col-span-1">
             <img
                 src={'https://cdn-icons-png.flaticon.com/256/9169/9169912.png'}
                 width={60}
                 height={60}
-                className=""/>
-              <div className="flex space-x-6">
+                className=""
+                alt="Logo"/>
+              <div className="flex flex-wrap gap-4 sm:space-x-6">
                 {navigation.social.map((item) => (
                   <a key={item.name} href={item.href} className="text-gray-400 hover:text-gray-500">
                     <span className="sr-only">{item.name}</span>
@@ -110,8 +111,8 @@ function Footer(){
                 ))}
               </div>
             </div>
-            <div className="mt-12 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-              <div className="md:grid md:grid-cols-2 md:gap-8">
+            <div className="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 xl:col-span-2 xl:mt-0">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-8">
                 <div>
                   <h3 className="text-base font-medium text-gray-900">Visit Us</h3>
                   <ul role="list" className="mt-4 space-y-4">
@@ -124,7 +125,7 @@ function Footer(){
                     ))}
                   </ul>
                 </div>
-                <div className="mt-12 md:mt-0">
+                <div className="mt-6 sm:mt-12 md:mt-0">
                   <h3 className="text-base font-medium text-gray-900">Contact</h3>
                   <ul role="list" className="mt-4 space-y-4">
                     {navigation.support.map((item) => (
@@ -137,7 +138,7 @@ function Footer(){
                   </ul>
                 </div>
               </div>
-              <div className="md:grid md:grid-cols-2 md:gap-8">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-8">
                 <div>
                   <h3 className="text-base font-medium text-gray-900">Company</h3>
                   <ul role="list" className="mt-4 space-y-4">
@@ -150,7 +151,7 @@ function Footer(){
                     ))}
                   </ul>
                 </div>
-                <div className="mt-12 md:mt-0">
+                <div className="mt-6 sm:mt-12 md:mt-0">
                   <h3 className="text-base font-medium text-gray-900">Services</h3>
                   <ul role="list" className="mt-4 space-y-4">
                     {navigation.legal.map((item) => (
@@ -165,8 +166,8 @@ function Footer(){
               </div>
             </div>
           </div>
-          <div className="mt-12 border-t border-gray-200 pt-8">
-            <p className="text-base text-gray-400 xl:text-center">&copy; 2024 FG by Felipe Garcia, Inc. All rights reserved.</p>
+          <div className="mt-8 sm:mt-12 border-t border-gray-200 pt-6 sm:pt-8">
+            <p className="text-sm sm:text-base text-gray-400 text-center xl:text-center">&copy; 2024 FG by Felipe Garcia, Inc. All rights reserved.</p>
           </div>
         </div>
       </footer>

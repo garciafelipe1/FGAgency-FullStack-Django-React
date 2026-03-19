@@ -79,12 +79,12 @@ function Header(){
     
 
     return(
-      <main>
-      <div className="relative px-6 lg:px-12">
-        <div className="mx-auto max-w-full xl:mx-12 xl:pt-40 xl:pb-64 lg:pt-40 lg:pb-48 pt-24 pb-12  ">
+      <main className="overflow-x-hidden">
+      <div className="relative px-4 sm:px-6 lg:px-12 max-w-full">
+        <div className="mx-auto max-w-full xl:mx-12 xl:pt-40 xl:pb-64 lg:pt-40 lg:pb-48 pt-20 sm:pt-24 pb-24 sm:pb-12">
           <div>
             <div>
-              <h1 className="text-4xl font-semibold tracking-tight pb-16  sm:text-6xl">
+              <h1 className="text-2xl sm:text-4xl font-semibold tracking-tight pb-8 sm:pb-16 md:text-5xl lg:text-6xl">
               Agency <span> </span>
                   <Typewriter
                         words={['For Your Idea','Of Your Dream','For Your Business']}
@@ -99,25 +99,25 @@ function Header(){
                         // onType={handleType}
                     />
               </h1>
-              <p className="mt-12 text-2xl max-w-2xl leading-8 text-black ">
+              <p className="mt-6 sm:mt-12 text-lg sm:text-2xl max-w-2xl leading-7 sm:leading-8 text-black">
               Jumpstart your business today with our services:
               </p>
-              <p className='mt-2'>
-              <span className='lg:text-2xl text-md font-medium leading-8 text-gray-900 sm:text-center  transition duration-300 ease-in-out border-b-2 border-transparent hover:border-orange-button'><Link to='/'>Web Development</Link></span> 
-              <span className='lg:text-2xl text-md font-medium leading-8 text-gray-900 sm:text-center  transition duration-300 ease-in-out border-b-2 border-transparent hover:border-orange-button'><Link to='/'> Game Development</Link></span>
-              <span className='lg:text-2xl text-md font-medium leading-8 text-gray-900 sm:text-center  transition duration-300 ease-in-out border-b-2 border-transparent hover:border-orange-button'><Link to='/'> Digital Marketing</Link></span>
+              <p className='mt-2 flex flex-wrap gap-x-2 gap-y-1'>
+              <span className='text-base sm:text-lg lg:text-2xl font-medium leading-8 text-gray-900 transition duration-300 ease-in-out border-b-2 border-transparent hover:border-orange-button'><Link to='/'>Web Development</Link></span> 
+              <span className='text-base sm:text-lg lg:text-2xl font-medium leading-8 text-gray-900 transition duration-300 ease-in-out border-b-2 border-transparent hover:border-orange-button'><Link to='/'> Game Development</Link></span>
+              <span className='text-base sm:text-lg lg:text-2xl font-medium leading-8 text-gray-900 transition duration-300 ease-in-out border-b-2 border-transparent hover:border-orange-button'><Link to='/'> Digital Marketing</Link></span>
               </p>
-              <div className="absolute bottom-0 left-0 flex space-x-6 xl:mx-20 mx-6">
+              <div className="mt-8 sm:mt-0 sm:absolute sm:bottom-0 sm:left-0 flex flex-wrap gap-4 sm:space-x-6 xl:mx-20 mx-0 sm:mx-6">
               {navigation.social.map((item) => (
                 <a key={item.name} href={item.href} className="text-gray-900 hover:text-gray-800">
                   <span className="sr-only">{item.name}</span>
-                  <item.icon className="h-8 w-8" aria-hidden="true" />
+                  <item.icon className="h-6 w-6 sm:h-8 sm:w-8" aria-hidden="true" />
                 </a>
               ))}
               </div>
             </div>
-            <div className="absolute inset-x-0 top-[calc(100%-20rem)] -z-10 transform-gpu overflow-hidden bg-white blur-lg lg:top-[calc(100%-45rem)] sm:top-[calc(100%-30rem)]">
-              <img src="https://bafybeicgamofiuvkc6wjxl4wwzzh6pdovhcvvyc2gw5verruiolnykzz3i.ipfs.w3s.link/bbub3.jpg" className='w-full h-full object-cover'/>
+            <div className="absolute inset-x-0 top-[calc(100%-20rem)] -z-10 transform-gpu overflow-hidden bg-white blur-lg lg:top-[calc(100%-45rem)] sm:top-[calc(100%-30rem)] min-h-[12rem]">
+              <img src="https://bafybeicgamofiuvkc6wjxl4wwzzh6pdovhcvvyc2gw5verruiolnykzz3i.ipfs.w3s.link/bbub3.jpg" className='w-full h-full object-cover max-w-full' alt=""/>
             </div>
           </div>
         </div>

@@ -7,6 +7,7 @@ import {useEffect} from 'react'
 import { get_blog } from "redux/actions/blog/blog";
 import moment from "moment";
 import DOMPurify from 'dompurify'
+import { getMediaUrl } from "config";
 
 function PostDetail({
     get_blog,
@@ -26,12 +27,12 @@ function PostDetail({
             <Navbar/>
             {
                 post && post.slug === slug ?
-                <div className="pt-24">
+                <div className="pt-20 sm:pt-24 overflow-x-hidden px-4 sm:px-0">
                 <div className="relative bg-gray-200">
             <div className="absolute inset-0">
             <img
                 className="h-full w-full object-cover"
-                src={post.thumbnail}
+                src={getMediaUrl(post.thumbnail)}
                 alt=""
             />
             <div className="absolute inset-0 bg-gray-300 mix-blend-multiply" aria-hidden="true" />

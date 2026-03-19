@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { API_URL } from 'config';
 import {
     GET_CATEGORIES_SUCCESS,
     GET_CATEGORIES_FAIL,
@@ -14,7 +15,7 @@ export const get_categories = () => async dispatch => {
 
     try{
 
-        const res = await axios.get(`${process.env.REACT_APP_API_URL}/api/category/list`, config)
+        const res = await axios.get(`${API_URL}/api/category/list`, config)
 
         if(res.status === 200){
             dispatch({

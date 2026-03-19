@@ -54,7 +54,7 @@ function Blog({
             <meta name="twitter:card" content="summary_large_image" />
         </Helmet>
             <Navbar/>
-            <div className="pt-24">
+            <div className="pt-20 sm:pt-24 overflow-x-hidden px-4 sm:px-0">
                 <CategoriesHeader categories={categories&&categories}/>
 
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

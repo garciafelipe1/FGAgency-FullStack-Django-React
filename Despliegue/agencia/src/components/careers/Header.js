@@ -1,13 +1,13 @@
 export default function Header() {
     return (
-      <div className="relative overflow-hidden bg-white">
-        <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
+      <div className="relative overflow-hidden bg-white max-w-full">
+        <div className="pt-12 sm:pt-24 pb-48 sm:pb-40 lg:pt-40 lg:pb-48">
           <div className="relative mx-auto max-w-full px-4 sm:static sm:px-6 lg:px-8">
             <div className="sm:max-w-3xl">
-              <h1 className="text-4xl font-semibold tracking-tight pb-16  sm:text-6xl">
+              <h1 className="text-2xl sm:text-4xl font-semibold tracking-tight pb-8 sm:pb-16 md:text-5xl lg:text-6xl">
                 Careers at FG, Inc
               </h1>
-              <p className="text-xl max-w-xl leading-relaxed text-gray-800 text-center md:text-left">
+              <p className="text-base sm:text-xl max-w-xl leading-relaxed text-gray-800 text-center md:text-left">
               Welcome to the FG job portal! Join us to become a part of one of the most great IT companies in your career. A team with a clear vision, strong work ethic, and a lot of passion to the work that we do every day.
               </p>
             </div>

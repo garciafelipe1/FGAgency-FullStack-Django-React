@@ -8,6 +8,7 @@ import { Switch } from '@headlessui/react'
 import { useState } from 'react'
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "config";
 import CircleLoader from "react-spinners/CircleLoader";
 function Contact(){
   
@@ -59,7 +60,7 @@ function Contact(){
         formdata.append("budget",budget)
 
         const fetchData=async()=>{
-          const res= await axios.post(`${process.env.REACT_APP_API_URL}/api/contacts/`,formdata,config)
+          const res= await axios.post(`${API_URL}/api/contacts/`,formdata,config)
 
           if(res.status===200){
             setLoading(false)
@@ -114,15 +115,15 @@ function Contact(){
             <meta name="twitter:card" content="summary_large_image" />
         </Helmet>
             <Navbar/>
-            <div className="pt-28">
-            <div className="relative bg-white">
+            <div className="pt-20 sm:pt-28 px-0 overflow-x-hidden">
+            <div className="relative bg-white max-w-full">
       <div className="absolute inset-0">
-        <div className="absolute inset-y-0 left-0 w-1/2 bg-gray-50" />
+        <div className="absolute inset-y-0 left-0 w-full sm:w-1/2 bg-gray-50" />
       </div>
-      <div className="relative mx-auto max-w-7xl lg:grid lg:grid-cols-5">
-        <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
+      <div className="relative mx-auto max-w-7xl lg:grid lg:grid-cols-5 px-4 sm:px-6">
+        <div className="bg-gray-50 py-10 sm:py-16 px-4 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
           <div className="mx-auto max-w-lg">
-            <h2 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Get in touch</h2>
+            <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-gray-900 md:text-3xl">Get in touch</h2>
             <p className="mt-3 text-lg leading-6 text-gray-500">
               Nullam risus blandit ac aliquam justo ipsum. Quam mauris volutpat massa dictumst amet. Sapien tortor lacus
               arcu.
@@ -159,7 +160,7 @@ function Contact(){
             </p>
           </div>
         </div>
-        <div className="bg-white py-16 px-4 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
+        <div className="bg-white py-10 sm:py-16 px-4 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
           <div className="mx-auto max-w-lg lg:max-w-none">
             <form onSubmit={e=>onSubmit(e)} action="#" method="POST" className="grid grid-cols-1 gap-y-6">
               <div>
@@ -246,7 +247,6 @@ function Contact(){
                   rows={4}
                   className="block w-full rounded-md border-gray-300 py-3 px-4 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
                   placeholder="Message"
-                  defaultValue={''}
                 />
               </div>
               <div>
@@ -268,9 +268,9 @@ function Contact(){
                 
               </div>
 
-              <div className=" px-4 py-5 sm:px-6">
-                <div className="-ml-4 -mt-2 flex flex-wrap items-center justify-between sm:flex-nowrap">
-                  <div className="col-span-2 text-lg font-medium leadigng-6 text-gray-900">
+              <div className="px-2 sm:px-4 py-5 sm:px-6">
+                <div className="flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
+                  <div className="text-base sm:text-lg font-medium leading-6 text-gray-900 max-w-full">
                   <Switch
                         checked={enabled}
                         onChange={setEnabled}
@@ -289,7 +289,7 @@ function Contact(){
                       
                     
                   </div>  
-                  <div className="ml-4 mt-2 flex-shrink-0">
+                  <div className="sm:ml-4 sm:mt-2 flex-shrink-0 w-full sm:w-auto">
                     {
                       loading ?
                       <div

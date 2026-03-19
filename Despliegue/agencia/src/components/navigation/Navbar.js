@@ -67,10 +67,10 @@ function Navbar(){
     const [open, setOpen] = useState(false)
 
     return(
-        <nav data-scroll data-scroll-id="hey" id='navbar' className='w-full py-2  transition duration-500 ease-in-out z-50 fixed'>
+        <nav data-scroll data-scroll-id="hey" id='navbar' className='w-full max-w-full overflow-x-hidden py-2 transition duration-500 ease-in-out z-50 fixed left-0 right-0'>
           
 
-            <div className="px-2 xl:px-4">
+            <div className="px-3 sm:px-4 xl:px-4 max-w-full">
 
 
                 <div className="-ml-4 -mt-2 hidden lg:flex flex-wrap items-center justify-between sm:flex-nowrap md:px-4 px-2">
@@ -100,81 +100,80 @@ function Navbar(){
                     </div>
                 </div>
                 {/* mobile nav */}
-                <div className="-ml-4 -mt-2 lg:hidden flex flex-wrap items-center justify-between sm:flex-nowrap md:px-4 px-2">
-                    <Link to='/' className="ml-4 mt-3">
+                <div className="-ml-4 -mt-2 lg:hidden flex flex-wrap items-center justify-between sm:flex-nowrap md:px-4 px-2 relative">
+                    <Link to='/' className="ml-4 mt-3 flex-shrink-0">
                     <img
                         src={'https://cdn-icons-png.flaticon.com/256/9169/9169912.png'}
                         width={60}
                         height={60}
                         className=""
+                        alt="FG Agency"
                     />
                     </Link>
-                    <div className="ml-4 mt-2 flex-shrink-0">
+                    <div className="relative flex-shrink-0 z-[60]">
                       <Popover className="relative">
                           {({ open }) => (
                           <>
                               <Popover.Button
-                              className={`
-                                  ${open ? '' : 'text-opacity-90'}
-                                  focus:ring-none focus:outline-none`}
+                                  type="button"
+                                  className={`
+                                      inline-flex items-center justify-center p-3 min-w-[48px] min-h-[48px] touch-manipulation
+                                      rounded-lg border-2 border-orange-500 text-gray-900
+                                      hover:bg-orange-50 active:bg-orange-100
+                                      focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2
+                                  `}
+                                  aria-expanded={open}
+                                  aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
                               >
-                              {
-                                  open ?
-                                  <i  className='bx bx-x text-4xl mt-1'></i>
-                                  :
-                                  <i  className='bx bx-menu text-4xl mt-1'></i>
-                              }
+                                  {open ? (
+                                      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                      </svg>
+                                  ) : (
+                                      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                                      </svg>
+                                  )}
                               </Popover.Button>
 
                               <Transition
-                              as={Fragment}
-                              enter="transition ease-out duration-200"
-                              enterFrom="opacity-0 translate-y-1"
-                              enterTo="opacity-100 translate-y-0"
-                              leave="transition ease-in duration-150"
-                              leaveFrom="opacity-100 translate-y-0"
-                              leaveTo="opacity-0 translate-y-1"
+                                  as={Fragment}
+                                  enter="transition ease-out duration-200"
+                                  enterFrom="opacity-0"
+                                  enterTo="opacity-100"
+                                  leave="transition ease-in duration-150"
+                                  leaveFrom="opacity-100"
+                                  leaveTo="opacity-0"
                               >
-                              <Popover.Panel className="absolute -left-32 z-10 mt-3 w-screen max-w-sm -translate-x-1/2 transform px-4 sm:px-0 lg:max-w-3xl">
-                                  <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
-                                  <div className="relative grid gap-8 bg-white p-7 lg:grid-cols-2">
-                                      {solutions.map((item) => (
-                                      <Link
-                                          key={item.name}
-                                          to={item.href}
-                                          className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
-                                      >
-                                          <div className="flex h-10 w-10 shrink-0 items-center justify-center text-white sm:h-12 sm:w-12">
-                                          <item.icon aria-hidden="true" />
-                                          </div>
-                                          <div className="ml-4">
-                                          <p className="text-sm font-medium text-gray-900">
-                                              {item.name}
-                                          </p>
-                                          <p className="text-sm text-gray-500">
-                                              {item.description}
-                                          </p>
-                                          </div>
-                                      </Link>
-                                      ))}
-                                  </div>
-                                  <div className="bg-gray-50 p-4">
-                                      <a
-                                      href="##"
-                                      className="flow-root rounded-md px-2 py-2 transition duration-150 ease-in-out hover:bg-gray-100 focus:outline-none focus-visible:ring focus-visible:ring-orange-500 focus-visible:ring-opacity-50"
-                                      >
-                                      <span className="flex items-center">
-                                          <span className="text-sm font-medium text-gray-900">
-                                          Documentation
-                                          </span>
-                                      </span>
-                                      <span className="block text-sm text-gray-500">
-                                          Start integrating products and tools
-                                      </span>
-                                      </a>
-                                  </div>
-                                  </div>
-                              </Popover.Panel>
+                                  <Popover.Panel
+                                      className="fixed inset-x-0 top-[80px] z-[55] w-full bg-white shadow-lg border-t border-gray-200"
+                                      style={{ maxHeight: 'calc(100vh - 80px)' }}
+                                  >
+                                      <div className="overflow-y-auto py-4" style={{ maxHeight: 'calc(100vh - 96px)' }}>
+                                          <nav className="px-4 space-y-1" aria-label="Menú principal">
+                                              {solutions.map((item) => (
+                                                  <Link
+                                                      key={item.name}
+                                                      to={item.href}
+                                                      className="flex items-center gap-3 rounded-lg px-4 py-3 text-base font-medium text-gray-900 hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                                                  >
+                                                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-orange-100 text-orange-600">
+                                                          <item.icon aria-hidden="true" />
+                                                      </span>
+                                                      <span>{item.name}</span>
+                                                  </Link>
+                                              ))}
+                                              <div className="mt-4 pt-4 border-t border-gray-100">
+                                                  <Link
+                                                      to="/contacto"
+                                                      className="flex items-center justify-center rounded-lg bg-orange-500 px-4 py-3 text-base font-medium text-white hover:bg-orange-600 transition-colors"
+                                                  >
+                                                      Hire Us
+                                                  </Link>
+                                              </div>
+                                          </nav>
+                                      </div>
+                                  </Popover.Panel>
                               </Transition>
                           </>
                           )}

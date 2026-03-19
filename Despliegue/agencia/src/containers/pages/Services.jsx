@@ -134,7 +134,7 @@ function Services(){
             <meta name="twitter:card" content="summary_large_image" />
         </Helmet>
             <Navbar/>
-            <div className="pt-8 ">
+            <div className="pt-20 sm:pt-24 overflow-x-hidden">
                 <Header/>
                 <div className="py-16 bg-gray-50">
 

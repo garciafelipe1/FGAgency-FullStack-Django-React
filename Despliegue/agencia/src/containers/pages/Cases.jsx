@@ -36,7 +36,7 @@ function Cases(){
             <meta name="twitter:card" content="summary_large_image" />
         </Helmet>
             <Navbar/>
-            <div className="pt-28">
+            <div className="pt-20 sm:pt-28 overflow-x-hidden">
                 <Header/>
                 <CasesList/>
             </div>

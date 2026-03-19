@@ -17,16 +17,13 @@ class BlogListView(APIView):
     permission_classes = (permissions.AllowAny,)
     def get(self, request, format=None):
         if Post.postobjects.all().exists():
-
             posts = Post.postobjects.all()
-
             paginator = SmallSetPagination()
             results = paginator.paginate_queryset(posts, request)
             serializer = PostListSerializer(results, many=True)
-
             return paginator.get_paginated_response({'posts': serializer.data})
         else:
-            return Response({'error':'No posts found'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({'posts': [], 'count': 0, 'next': None, 'previous': None}, status=status.HTTP_200_OK)
 
 
 class ListPostsByCategoryView(APIView):

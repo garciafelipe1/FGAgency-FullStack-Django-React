@@ -73,41 +73,33 @@ function CasesList(){
         // { width: 1750, itemsToShow: 6 },
     ]
 
-    return(
-        <div className="relative px-2 pt-6 pb-16 sm:px-4 lg:px-10 lg:pb-20">
-        <div className="absolute inset-0">
-          <div className="h-1/3 bg-white sm:h-2/3" />
-        </div>
-        <div className="relative mx-auto max-w-full">
-          
-          <Carousel
-                itemsToScroll={2}
-                itemsToShow={2}
-                breakPoints={breakPoints}
-                pagination={false}
-                itemPadding={[0, 48]}
-                renderArrow={({ type, onClick }) => (
-                  <button 
-                    onClick={onClick}
-                    
-                    style={{
-                      position: "relative",
-                      top: "-150px", // Ajusta según lo necesites
-                      
-                    }}
-                  >
-                    {type === "PREV" ? "◀" : "▶"}
-                  </button>
-                )}
-              
+    return (
+        <div className="relative px-4 pt-8 pb-20 sm:px-6 lg:px-10">
+          <div className="relative mx-auto max-w-full">
+            <Carousel
+              itemsToScroll={2}
+              itemsToShow={2}
+              breakPoints={breakPoints}
+              pagination={false}
+              itemPadding={[0, 24]}
+              renderArrow={({ type, onClick }) => (
+                <button
+                  type="button"
+                  onClick={onClick}
+                  className="absolute top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/90 p-2 text-gray-700 shadow-md transition hover:bg-white hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
+                  style={{ [type === "PREV" ? "left" : "right"]: "-12px" }}
+                  aria-label={type === "PREV" ? "Anterior" : "Siguiente"}
+                >
+                  {type === "PREV" ? "‹" : "›"}
+                </button>
+              )}
             >
-          
-            {posts.map((post, index) => (
-              <CaseCard index={index} data={post}/>
-            ))}
+              {posts.map((post, index) => (
+                <CaseCard key={post.id ?? index} index={index} data={post} />
+              ))}
             </Carousel>
+          </div>
         </div>
-      </div>
-    )
+    );
 }
 export default CasesList

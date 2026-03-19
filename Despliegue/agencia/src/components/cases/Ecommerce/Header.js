@@ -1,16 +1,16 @@
 export default function Header() {
     return (
-      <div className="relative overflow-hidden bg-white">
-        <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
+      <div className="relative overflow-hidden bg-white max-w-full">
+        <div className="pt-12 sm:pt-24 pb-48 sm:pb-40 lg:pt-40 lg:pb-48">
           <div className="relative mx-auto max-w-full px-4 sm:static sm:px-6 lg:px-8">
             <div className="sm:max-w-3xl">
-              <h1 className="mb-12 text-3xl font-bold text-orange-800">
+              <h1 className="mb-6 sm:mb-12 text-xl sm:text-3xl font-bold text-orange-800">
                 FGAgency.com
               </h1>
-              <h1 className="font text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              <h1 className="font text-2xl sm:text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
                 Ecommerce Case Study
               </h1>
-              <p className="mt-12 text-2xl leading-10 text-gray-900">
+              <p className="mt-6 sm:mt-12 text-lg sm:text-2xl leading-8 sm:leading-10 text-gray-900">
               We bauild an app make to genere to incoming!
               </p>
             </div>

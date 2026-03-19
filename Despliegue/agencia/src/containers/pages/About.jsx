@@ -1,4 +1,3 @@
-import Clients from "components/about/Clients"
 import Features from "components/about/Features"
 import Header from "components/about/Header"
 import Images from "components/about/Images"
@@ -6,7 +5,6 @@ import ImagesJunior from "components/about/Images2"
 import ServicesListJunior from "components/about/ServiceList2"
 import Team from "components/about/Team"
 import TestStats from "components/about/TestStats"
-import LogoCloud from "components/home/LogoCloud"
 import Footer from "components/navigation/Footer"
 import Navbar from "components/navigation/Navbar"
 import ServicesList from "components/services/ServicesList"
@@ -144,10 +142,9 @@ function About(){
         </Helmet>
 
             <Navbar/>
-            <div className="pt-28">
+            <div className="pt-20 sm:pt-28 overflow-x-hidden">
                 <Header/>
                 <TestStats/>
-                <LogoCloud/>
                 <Images/>
                 
                 <div className="bg-white">

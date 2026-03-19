@@ -10,7 +10,7 @@ function Ecommerce(){
     return(
         <Layout>
             <Navbar/>
-            <div className="pt-28">
+            <div className="pt-20 sm:pt-28 overflow-x-hidden">
             <Header/>
             <ProblemDefinition/>
             <Solution/>

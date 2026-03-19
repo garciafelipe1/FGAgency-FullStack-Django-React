@@ -5,6 +5,7 @@ import Footer from "components/navigation/Footer";
 import { ChevronRightIcon, StarIcon } from '@heroicons/react/20/solid'
 import { useState } from "react";
 import axios from "axios";
+import { API_URL } from "config";
 import { useNavigate } from "react-router-dom";
 import CircleLoader from "react-spinners/CircleLoader";
 
@@ -41,7 +42,7 @@ function OptIn(){
 
         const fetchData = async () => {
             setLoading(true);
-            const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/contacts/opt-in`,
+            const res = await axios.post(`${API_URL}/api/contacts/opt-in`,
             formData,
             config)
 

@@ -14,7 +14,7 @@ function OptInCTA(){
     return(
         <Layout>
             <Navbar/>
-            <div className="pt-28">
+            <div className="pt-20 sm:pt-28 overflow-x-hidden px-4 sm:px-0">
             
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {/* We've used 3xl here, but feel free to try other max-widths based on your needs */}

@@ -4,7 +4,6 @@ import Navbar from "components/navigation/Navbar";
 import Features from "components/services/javascriptdev/Features";
 import Header from "components/services/javascriptdev/Header";
 import TechStack from "components/services/javascriptdev/TechStack";
-import OurClients from "components/services/javascriptdev/OurClients";
 import CasesList from "components/cases/CasesList";
 import Contact from "components/Contact";
 
@@ -13,7 +12,7 @@ function JavascriptDev() {
     return (
         <Layout>
             <Navbar/>
-            <div className="pt-28">
+            <div className="pt-20 sm:pt-28 overflow-x-hidden">
 
 
                 <Header/>

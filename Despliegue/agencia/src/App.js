@@ -35,8 +35,7 @@ function App() {
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <Provider store={store}>
-        <Router>
-
+        <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
             <AnimatedRoutes/>
         </Router>
       </Provider>

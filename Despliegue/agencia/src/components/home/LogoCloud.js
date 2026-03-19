@@ -3,10 +3,8 @@ export default function LogoCloud() {
     <div className="relative mx-auto lg:mx-12 max-w-lg  lg:max-w-full" >
     <h2 className="text-3xl font-mathsans tracking-tight text-gray-900 sm:text-3xl">Our clients</h2>
     <p className="mt-3 text-xl text-gray-500 sm:mt-4">
-              <p className="mt-3 text-xl text-gray-500 sm:mt-3 ">
-              We believe brands are the cultural connection between companies and their communities.
-            </p>
-            </p>
+      We believe brands are the cultural connection between companies and their communities.
+    </p>
       <div className="bg-white">
         <div className="mx-auto lg:mx-12 max-w-full py-12 px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">

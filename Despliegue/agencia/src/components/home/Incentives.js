@@ -38,11 +38,11 @@ const incentives = [
   
   export default function Incentives() {
     return (
-      <div className="bg-white">
-        <div className="mx-auto lg:mx-12 max-w-full py-24 sm:px-2 sm:py-32 lg:px-4">
-          <div className="mx-auto max-w-2xl px-4 lg:max-w-none">
+      <div className="bg-white overflow-x-hidden">
+        <div className="mx-auto lg:mx-12 max-w-full py-12 sm:py-24 px-4 sm:px-6 sm:py-32 lg:px-4">
+          <div className="mx-auto max-w-2xl px-0 sm:px-4 lg:max-w-none">
             <div className="max-w-3xl">
-              <h2 className="text-4xl font-mathsans tracking-tight text-gray-900">
+              <h2 className="text-2xl sm:text-4xl font-mathsans tracking-tight text-gray-900">
                 Why should you choose FG digital product agency?
               </h2>
               <p className="mt-4 text-gray-500">
@@ -50,8 +50,8 @@ const incentives = [
               </p>
             </div>
             <div className="mt-16 grid grid-cols-1 gap-y-10 gap-x-8 lg:grid-cols-3">
-              {incentives.map((incentive) => (
-                <div key={incentive.name} className="sm:flex lg:block">
+              {incentives.map((incentive, index) => (
+                <div key={`incentive-${index}`} className="sm:flex lg:block">
                   <div className="sm:flex-shrink-0">
                     <img className="h-16 w-16" src={incentive.imageSrc} alt="" />
                   </div>
